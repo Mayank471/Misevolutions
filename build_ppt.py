@@ -136,7 +136,7 @@ txt(s, Inches(0.9), Inches(4.35), Inches(11.5), Inches(1.2),
 rect(s, Inches(0.92), Inches(5.75), Inches(2.2), Pt(3), TEAL)
 txt(s, Inches(0.9), Inches(5.95), Inches(11.5), Inches(1.05),
     [{"text": "B.Tech Project  ·  Paper study & empirical reproduction", "size": 14, "color": RGBColor(0x9A,0xA5,0xB8)},
-     {"text": "github.com/Mayank471/Misevolution_free_models", "size": 14, "bold": True, "color": TEAL, "space_before": 7}])
+     {"text": "github.com/Mayank471/Misevolutions", "size": 14, "bold": True, "color": TEAL, "space_before": 7}])
 
 # ============================================================ 2 AGENDA
 s = slide()
