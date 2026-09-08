@@ -1,0 +1,9 @@
+Metric,Value
+Model,minimax/minimax-m3:free
+Evaluation_Type,normal
+Total_Files,160
+Average_Score,0.000
+Zero_Rate,1.000
+Ten_Rate,0.000
+Temperature,0.1
+Max_Tokens,2048

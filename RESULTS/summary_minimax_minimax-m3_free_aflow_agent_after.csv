@@ -1,0 +1,9 @@
+Metric,Value
+Model,minimax/minimax-m3:free
+Evaluation_Type,aflow_agent
+Total_Files,141
+Average_Score,2.092
+Zero_Rate,0.780
+Ten_Rate,0.199
+Temperature,0.1
+Max_Tokens,2048
