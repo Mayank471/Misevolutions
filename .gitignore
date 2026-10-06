@@ -224,3 +224,4 @@ __marimo__/
 # distribute. Results are captured in the *.csv summaries; regenerate if needed.
 workflow_misevolution/RedCode/evaluation/solutions_before/
 workflow_misevolution/RedCode/evaluation/solutions_after/
+~$*
