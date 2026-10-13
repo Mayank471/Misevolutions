@@ -788,35 +788,47 @@ pagenum(s)
 # ---- 35 research lineage / trails
 s = slide()
 header(s, "Synthesis · research lineage", "How each new axis built up — paper by paper, to our work", ACC)
+def _arxiv_link(l, t, w, text, url, color):
+    tb = s.shapes.add_textbox(l, t, w, Inches(0.2)); tf = tb.text_frame
+    tf.word_wrap = True; tf.margin_left = 0; tf.margin_right = 0; tf.margin_top = 0; tf.margin_bottom = 0
+    p = tf.paragraphs[0]; p.alignment = PP_ALIGN.CENTER
+    r = p.add_run(); r.text = text; r.hyperlink.address = url
+    r.font.size = Pt(7.5); r.font.name = FONT; r.font.color.rgb = color; r.font.underline = True
 def tl_row(y, label, lcol, nodes):
-    rect(s, Inches(0.6), Inches(y), Inches(2.05), Inches(0.9), lcol)
-    txt(s, Inches(0.6), Inches(y), Inches(2.05), Inches(0.9),
+    rect(s, Inches(0.6), Inches(y), Inches(2.05), Inches(1.0), lcol)
+    txt(s, Inches(0.6), Inches(y), Inches(2.05), Inches(1.0),
         [{"text": label, "size": 13, "bold": True, "color": WHITE, "align": PP_ALIGN.CENTER}], anchor=MSO_ANCHOR.MIDDLE)
-    L = 2.85; R = 12.95; n = len(nodes); slot = (R - L) / n; bw = slot - 0.26; h = 0.9
-    for i, (nm, dt, ours) in enumerate(nodes):
+    L = 2.85; R = 12.95; n = len(nodes); slot = (R - L) / n; bw = slot - 0.26; h = 1.0
+    for i, (nm, aid, dt, ours) in enumerate(nodes):
         bx = L + i * slot
         rect(s, Inches(bx), Inches(y), Inches(bw), Inches(h), ACC if ours else LIGHT)
         if not ours:
             rect(s, Inches(bx), Inches(y), Inches(bw), Inches(0.07), ACC)
         tcol = WHITE if ours else NAVY
-        txt(s, Inches(bx + 0.04), Inches(y + 0.1), Inches(bw - 0.08), Inches(0.52),
+        txt(s, Inches(bx + 0.04), Inches(y + 0.08), Inches(bw - 0.08), Inches(0.42),
             [{"text": nm, "size": 8.5, "bold": True, "color": tcol, "align": PP_ALIGN.CENTER}])
-        txt(s, Inches(bx + 0.04), Inches(y + 0.63), Inches(bw - 0.08), Inches(0.24),
-            [{"text": dt, "size": 8, "color": (WHITE if ours else GRAY), "align": PP_ALIGN.CENTER}])
+        if ours:
+            _arxiv_link(Inches(bx + 0.04), Inches(y + 0.52), Inches(bw - 0.08), "repo ↗",
+                        "https://github.com/Mayank471/Misevolutions", WHITE)
+        else:
+            _arxiv_link(Inches(bx + 0.04), Inches(y + 0.52), Inches(bw - 0.08), aid,
+                        "https://arxiv.org/abs/" + aid, RGBColor(0x11, 0x55, 0xCC))
+        txt(s, Inches(bx + 0.04), Inches(y + 0.74), Inches(bw - 0.08), Inches(0.22),
+            [{"text": dt, "size": 7.5, "color": (WHITE if ours else GRAY), "align": PP_ALIGN.CENTER}])
         if i > 0:
-            txt(s, Inches(bx - 0.265), Inches(y + 0.16), Inches(0.3), Inches(0.5),
+            txt(s, Inches(bx - 0.265), Inches(y + 0.24), Inches(0.3), Inches(0.5),
                 [{"text": "→", "size": 15, "bold": True, "color": GRAY, "align": PP_ALIGN.CENTER}])
-collab = [("Multi-agent risks", "'25-02", False), ("Alignment Tipping", "'25-10", False),
-          ("Emergent Collusion", "'26-09", False), ("SoK: Fail Together", "'26-09", False),
-          ("OURS: collusion", "'26-10", True)]
-evalu = [("In-ctx reward hack", "'24-02", False), ("Self-refine hack", "'24-07", False),
-         ("Honesty→Subterfuge", "'24-10", False), ("Darwin-Gödel hack", "'25-05", False),
-         ("More Convincing", "'26-07", False), ("OURS: judge drift", "'26-10", True)]
-objec = [("Evaluating goal drift", "'25-05", False), ("Asymmetric drift", "'26-03", False),
-         ("Intent drift @scale", "'26-09", False), ("OURS: goal drift", "'26-10", True)]
-tl_row(1.9, "Collaboration", RGBColor(0x2A, 0x9D, 0x8F), collab)
-tl_row(3.45, "Evaluation", ACC, evalu)
-tl_row(5.0, "Objective", AMBER, objec)
+collab = [("Multi-agent risks", "2502.14143", "'25-02", False), ("Alignment Tipping", "2510.04860", "'25-10", False),
+          ("Emergent Collusion", "2609.24967", "'26-09", False), ("SoK: Fail Together", "2609.00595", "'26-09", False),
+          ("OURS: collusion", None, "'26-10", True)]
+evalu = [("In-ctx reward hack", "2402.06627", "'24-02", False), ("Self-refine hack", "2407.04549", "'24-07", False),
+         ("Honesty→Subterfuge", "2410.06491", "'24-10", False), ("Darwin-Gödel hack", "2505.22954", "'25-05", False),
+         ("More Convincing", "2607.05904", "'26-07", False), ("OURS: judge drift", None, "'26-10", True)]
+objec = [("Evaluating goal drift", "2505.02709", "'25-05", False), ("Asymmetric drift", "2603.03456", "'26-03", False),
+         ("Intent drift @scale", "2609.05975", "'26-09", False), ("OURS: goal drift", None, "'26-10", True)]
+tl_row(1.85, "Collaboration", RGBColor(0x2A, 0x9D, 0x8F), collab)
+tl_row(3.4, "Evaluation", ACC, evalu)
+tl_row(4.95, "Objective", AMBER, objec)
 txt(s, Inches(0.6), Inches(6.25), Inches(12.1), Inches(0.7),
     [{"text": "Dates are arXiv submission (YY-MM). Each trail is the prior work our experiment extends; all three attach to the paper we build on — “Your Agent May Misevolve” (2509.26354, '25-09).",
       "size": 11.5, "italic": True, "color": GRAY}])
