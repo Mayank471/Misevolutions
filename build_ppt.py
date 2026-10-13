@@ -822,6 +822,139 @@ txt(s, Inches(0.6), Inches(6.25), Inches(12.1), Inches(0.7),
       "size": 11.5, "italic": True, "color": GRAY}])
 pagenum(s)
 
+# ---- 36 validation datasets (details table)
+s = slide()
+header(s, "Synthesis · validation plan", "Datasets to scale each proof — three per category", ACC)
+txt(s, Inches(0.6), Inches(1.6), Inches(12.1), Inches(0.38),
+    [{"text": "Each category tested on a paper dataset (already in the repo) plus two external benchmarks with objective ground truth:",
+      "size": 12.5, "color": INK}])
+cols = ["Category", "Dataset", "Size", "Task & ground truth", "Access"]
+rows = [
+    ("Evaluation\n(judge drift)", "RedCode-Gen", "160 prompts", "malware-gen prompts; judge = harmful/safe (0–10)", "in repo (paper)"),
+    (None, "GSM8K", "1,319 test", "grade-school math; exact-match numeric answer", "HF gsm8k (MIT)"),
+    (None, "TruthfulQA", "817 Q", "plausible falsehoods; MC / reference answers", "HF truthful_qa (Apache-2.0)"),
+    ("Collaboration\n(collusion)", "HumanEval", "164 tasks", "Python tasks; pass/fail via unit tests", "HF openai_humaneval (MIT)"),
+    (None, "MBPP", "974 tasks", "basic Python; unit tests (seed bugs)", "HF mbpp (CC-BY-4.0)"),
+    (None, "GSM8K (reuse)", "1,319", "math; reviewer approves a wrong answer", "HF gsm8k (MIT)"),
+    ("Objective\n(goal drift)", "AgentNet scenarios", "40 cases", "Sales/Service/Med/Finance; goal vs reward-hack", "in repo (paper)"),
+    (None, "HANDBOOK.md", "65 tasks / 824 rubrics", "long SOP adherence across tool use; rubric grade", "public harness (2607.25398)"),
+    (None, "Goal-Drift env", "scenario-based", "stock-trading goal persistence (≤100k tok)", "code (2505.02709)"),
+]
+GRP = {"Evaluation\n(judge drift)": (ACC, RGBColor(0xEC, 0xEF, 0xFB)),
+       "Collaboration\n(collusion)": (RGBColor(0x2A, 0x9D, 0x8F), RGBColor(0xE2, 0xF1, 0xEE)),
+       "Objective\n(goal drift)": (AMBER, RGBColor(0xFB, 0xF4, 0xE6))}
+nrow = len(rows) + 1
+gt = s.shapes.add_table(nrow, 5, Inches(0.6), Inches(2.08), Inches(12.1), Inches(0.5) * nrow).table
+for c, wdt in enumerate([1.6, 2.35, 1.45, 4.5, 2.2]):
+    gt.columns[c].width = Inches(wdt)
+for c, ct in enumerate(cols):
+    cell = gt.cell(0, c); cell.fill.solid(); cell.fill.fore_color.rgb = NAVY
+    p = cell.text_frame.paragraphs[0]; r = p.add_run(); r.text = ct
+    r.font.size = Pt(11); r.font.bold = True; r.font.color.rgb = WHITE; r.font.name = FONT
+# group merges on column 0
+grp_ranges = [(1, 3, "Evaluation\n(judge drift)"), (4, 6, "Collaboration\n(collusion)"), (7, 9, "Objective\n(goal drift)")]
+for ri, row in enumerate(rows, 1):
+    dark, light = None, None
+    for s0, e0, g in grp_ranges:
+        if s0 <= ri <= e0: dark, light = GRP[g]
+    for c, val in enumerate(row):
+        cell = gt.cell(ri, c)
+        if c == 0:
+            continue
+        cell.fill.solid(); cell.fill.fore_color.rgb = WHITE if ri % 2 else LIGHT
+        p = cell.text_frame.paragraphs[0]; rr = p.add_run(); rr.text = val
+        rr.font.size = Pt(9.5); rr.font.name = FONT; rr.font.color.rgb = INK
+        if c == 1: rr.font.bold = True; rr.font.color.rgb = NAVY
+        if c == 2: rr.font.bold = True; rr.font.color.rgb = dark
+for s0, e0, g in grp_ranges:
+    gt.cell(s0, 0).merge(gt.cell(e0, 0))
+    dark, light = GRP[g]
+    cell = gt.cell(s0, 0); cell.fill.solid(); cell.fill.fore_color.rgb = light
+    p = cell.text_frame.paragraphs[0]; rr = p.add_run(); rr.text = g
+    rr.font.size = Pt(10.5); rr.font.bold = True; rr.font.color.rgb = dark; rr.font.name = FONT
+pagenum(s)
+
+# ---- 37 are the sizes paper-grade?
+s = slide()
+header(s, "Synthesis · is this paper-grade?", "Are the dataset sizes good enough for a paper?", ACC)
+rect(s, Inches(0.6), Inches(1.75), Inches(12.1), Inches(1.15), RGBColor(0xEC, 0xEF, 0xFB))
+txt(s, Inches(0.9), Inches(1.9), Inches(11.5), Inches(0.9),
+    [{"text": "Yes for the standard benchmarks — provided we add multiple models and seeds.", "size": 19, "bold": True, "color": NAVY},
+     {"text": "Size is the easy part here; the harder bar for a paper is models × seeds × a clean ground-truth protocol.", "size": 13, "color": GRAY, "space_before": 4}])
+left = [("GSM8K 1,319 · TruthfulQA 817 · MBPP 974", "full standard eval sets — ample on their own", GREENOK),
+        ("HumanEval 164 · RedCode-Gen 160", "small, but the field-standard code / safety benchmarks — accepted as-is in papers", GREENOK),
+        ("Each item × rounds × seeds", "the drift design multiplies effective sample size well beyond the raw row count", GREENOK),
+        ("AgentNet 40 cases", "the thin spot — lean on HANDBOOK (65 / 824 rubrics) + the stock-trading env for the Objective axis", AMBER)]
+y = Inches(3.15)
+for t, d, c in left:
+    rect(s, Inches(0.6), y, Inches(0.12), Inches(0.82), c)
+    txt(s, Inches(0.9), y, Inches(6.1), Inches(0.82),
+        [{"text": t, "size": 13.5, "bold": True, "color": NAVY},
+         {"text": d, "size": 11.5, "color": GRAY, "space_before": 2}])
+    y += Inches(0.92)
+# right: what matters more
+rect(s, Inches(7.1), Inches(3.15), Inches(5.6), Inches(3.5), LIGHT); rect(s, Inches(7.1), Inches(3.15), Inches(5.6), Inches(0.09), ACC)
+txt(s, Inches(7.35), Inches(3.32), Inches(5.1), Inches(0.4), [{"text": "WHAT MATTERS MORE THAN RAW N", "size": 12, "bold": True, "color": ACC}])
+bullets(s, Inches(7.35), Inches(3.8), Inches(5.1), Inches(2.7),
+    [("Run ≥2–3 backbone models, not one free model — the single biggest credibility gap", 0),
+     ("Report variance / 95% CI over ≥3 seeds per cell", 0),
+     ("A clean, auditable ground-truth check: exact-match (GSM8K), unit tests (HumanEval/MBPP), rubric (HANDBOOK)", 0),
+     ("Pre-register the drift protocol (rounds, memory, metric) so the before→after is reproducible", 0)],
+    size=12.5, gap=9, dot=ACC)
+pagenum(s)
+
+# ---- 38 models panel
+s = slide()
+header(s, "Synthesis · validation plan", "Which models to run the panel on", ACC)
+txt(s, Inches(0.6), Inches(1.58), Inches(12.1), Inches(0.38),
+    [{"text": "Span families × capability, overlap the paper for comparability, and pin dated snapshots (never “latest”):",
+      "size": 12.5, "color": INK}])
+cols = ["Model", "Family", "Role in the panel", "OpenRouter id (pin snapshot)"]
+data = [
+    ("GPT-4.1  (or GPT-5)", "OpenAI", "frontier; used in the paper", "openai/gpt-4.1"),
+    ("Claude-Sonnet-4.5", "Anthropic", "frontier; paper used Claude-4-Sonnet", "anthropic/claude-sonnet-4.5"),
+    ("Gemini-2.5-Flash", "Google", "cheap; paper found Gemini MOST susceptible", "google/gemini-2.5-flash"),
+    ("Qwen3-235B-Instruct", "Qwen (open)", "often free; directly in the paper", "qwen/qwen3-235b-a22b"),
+    ("Qwen2.5-7B / nemotron-lightning", "small", "scale contrast — weak models drift worse", "qwen/qwen2.5-7b-instruct"),
+]
+FAMCOL = {"OpenAI": RGBColor(0x0A, 0x7D, 0x6B), "Anthropic": RGBColor(0xC2, 0x41, 0x0C),
+          "Google": RGBColor(0x2A, 0x5B, 0xD7), "Qwen (open)": RGBColor(0x6A, 0x4C, 0xA5),
+          "small": GRAY}
+nrow = len(data) + 1
+gt = s.shapes.add_table(nrow, 4, Inches(0.6), Inches(2.0), Inches(12.1), Inches(0.46) * nrow).table
+for c, wdt in enumerate([3.2, 1.9, 4.5, 2.5]):
+    gt.columns[c].width = Inches(wdt)
+for c, ct in enumerate(cols):
+    cell = gt.cell(0, c); cell.fill.solid(); cell.fill.fore_color.rgb = NAVY
+    p = cell.text_frame.paragraphs[0]; r = p.add_run(); r.text = ct
+    r.font.size = Pt(11); r.font.bold = True; r.font.color.rgb = WHITE; r.font.name = FONT
+for ri, row in enumerate(data, 1):
+    for c, val in enumerate(row):
+        cell = gt.cell(ri, c); cell.fill.solid(); cell.fill.fore_color.rgb = WHITE if ri % 2 else LIGHT
+        p = cell.text_frame.paragraphs[0]; rr = p.add_run(); rr.text = val
+        rr.font.size = Pt(10); rr.font.name = FONT; rr.font.color.rgb = INK
+        if c == 0: rr.font.bold = True; rr.font.color.rgb = NAVY
+        if c == 1: rr.font.bold = True; rr.font.color.rgb = FAMCOL.get(val, INK)
+        if c == 3: rr.font.color.rgb = RGBColor(0x11, 0x55, 0xCC)
+# free-only panel box (left)
+rect(s, Inches(0.6), Inches(4.95), Inches(6.0), Inches(2.0), RGBColor(0xE2, 0xF1, 0xEE)); rect(s, Inches(0.6), Inches(4.95), Inches(6.0), Inches(0.09), RGBColor(0x2A, 0x9D, 0x8F))
+txt(s, Inches(0.85), Inches(5.1), Inches(5.5), Inches(0.35), [{"text": "FREE-ONLY PANEL (runnable now, no spend)", "size": 11.5, "bold": True, "color": RGBColor(0x1F, 0x6F, 0x63)}])
+bullets(s, Inches(0.85), Inches(5.5), Inches(5.5), Inches(1.4),
+    [("nvidia/nemotron-3.5-lightning:free  —  NVIDIA, small (already validated)", 0),
+     ("qwen/qwen3.8-27b:free  or  z-ai/glm-5.2:free  —  open-weight, mid", 0),
+     ("google/gemma-4-31b-it:free  —  Google family", 0),
+     ("free tier rotates & rate-limits — verify live before the run", 0)],
+    size=11, gap=6, dot=RGBColor(0x2A, 0x9D, 0x8F))
+# ground rules box (right)
+rect(s, Inches(6.72), Inches(4.95), Inches(6.0), Inches(2.0), LIGHT); rect(s, Inches(6.72), Inches(4.95), Inches(6.0), Inches(0.09), ACC)
+txt(s, Inches(6.97), Inches(5.1), Inches(5.5), Inches(0.35), [{"text": "GROUND RULES", "size": 11.5, "bold": True, "color": ACC}])
+bullets(s, Inches(6.97), Inches(5.5), Inches(5.55), Inches(1.4),
+    [("GSM8K / HumanEval / MBPP have PROGRAMMATIC ground truth → backbone is the only variable, no judge confound", 0),
+     ("RedCode-Gen / AgentNet need a judge → hold ONE fixed strong judge constant across all backbones", 0),
+     ("Report variance / 95% CI over ≥3 seeds; cost on the cheap tier ≈ $5–15", 0)],
+    size=11, gap=7, dot=ACC)
+pagenum(s)
+
 # ============================================================ 34 takeaways
 s = slide()
 rect(s, 0, 0, SW, SH, NAVY)
