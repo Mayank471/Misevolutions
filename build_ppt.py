@@ -753,6 +753,75 @@ bullets(s, Inches(8.0), Inches(2.55), Inches(4.5), Inches(3.3),
     size=11.5, gap=10, dot=ACC)
 pagenum(s)
 
+# ---- 34 taxonomy: where the new axes fit
+s = slide()
+header(s, "Synthesis · a taxonomy", "Where the three new axes fit — extending the paper's map", ACC)
+txt(s, Inches(0.6), Inches(1.68), Inches(12.1), Inches(0.4),
+    [{"text": "THE PAPER categorises by which internal COMPONENT evolves:", "size": 12.5, "bold": True, "color": GRAY}])
+paper = [("MODEL", C_MODEL), ("MEMORY", C_MEM), ("TOOL", C_TOOL), ("WORKFLOW", C_FLOW)]
+x = Inches(0.6); w = Inches(2.93)
+for name, col in paper:
+    rect(s, x, Inches(2.08), w, Inches(0.72), col)
+    txt(s, x, Inches(2.08), w, Inches(0.72), [{"text": name, "size": 15, "bold": True, "color": WHITE, "align": PP_ALIGN.CENTER}], anchor=MSO_ANCHOR.MIDDLE)
+    x += w + Inches(0.14)
+txt(s, Inches(0.6), Inches(3.0), Inches(12.1), Inches(0.5),
+    [{"text": "WE ADD three categories on a different axis — the system-level layer the agent misevolves in:", "size": 12.5, "bold": True, "color": ACC}])
+new = [("Collaboration", "←  Multi-agent misevolution",
+        "Failure lives BETWEEN agents: shared-reward collusion, imitation, trust & protocol drift. No single component captures it.",
+        "nearest paper pathway: Workflow — but it is inter-agent, not one pipeline."),
+       ("Evaluation", "←  LLM-judge / self-critic misevolution",
+        "Failure in how the agent GRADES itself: the self-reward signal drifts or is gamed, corrupting every other update at its source.",
+        "nearest paper pathway: Model (self-reward) — but it is the evaluator, not the policy."),
+       ("Objective", "←  Goal-drift misevolution",
+        "Failure in WHAT it is trying to do: the goal erodes under long-context pressure, with no component changed at all.",
+        "nearest paper pathway: Memory/context — but it is the intent itself.")]
+x = Inches(0.6); w = Inches(3.95)
+for title, maps, why, near in new:
+    rect(s, x, Inches(3.62), w, Inches(3.0), LIGHT); rect(s, x, Inches(3.62), w, Inches(0.09), ACC)
+    txt(s, x + Inches(0.25), Inches(3.8), w - Inches(0.45), Inches(0.45), [{"text": title, "size": 17, "bold": True, "color": ACC}])
+    txt(s, x + Inches(0.25), Inches(4.3), w - Inches(0.45), Inches(0.4), [{"text": maps, "size": 12.5, "bold": True, "color": NAVY}])
+    txt(s, x + Inches(0.25), Inches(4.78), w - Inches(0.5), Inches(1.3), [{"text": why, "size": 12, "color": INK}])
+    txt(s, x + Inches(0.25), Inches(6.05), w - Inches(0.5), Inches(0.5), [{"text": near, "size": 10.5, "italic": True, "color": GRAY}])
+    x += w + Inches(0.13)
+pagenum(s)
+
+# ---- 35 research lineage / trails
+s = slide()
+header(s, "Synthesis · research lineage", "How each new axis built up — paper by paper, to our work", ACC)
+def tl_row(y, label, lcol, nodes):
+    rect(s, Inches(0.6), Inches(y), Inches(2.05), Inches(0.9), lcol)
+    txt(s, Inches(0.6), Inches(y), Inches(2.05), Inches(0.9),
+        [{"text": label, "size": 13, "bold": True, "color": WHITE, "align": PP_ALIGN.CENTER}], anchor=MSO_ANCHOR.MIDDLE)
+    L = 2.85; R = 12.95; n = len(nodes); slot = (R - L) / n; bw = slot - 0.26; h = 0.9
+    for i, (nm, dt, ours) in enumerate(nodes):
+        bx = L + i * slot
+        rect(s, Inches(bx), Inches(y), Inches(bw), Inches(h), ACC if ours else LIGHT)
+        if not ours:
+            rect(s, Inches(bx), Inches(y), Inches(bw), Inches(0.07), ACC)
+        tcol = WHITE if ours else NAVY
+        txt(s, Inches(bx + 0.04), Inches(y + 0.1), Inches(bw - 0.08), Inches(0.52),
+            [{"text": nm, "size": 8.5, "bold": True, "color": tcol, "align": PP_ALIGN.CENTER}])
+        txt(s, Inches(bx + 0.04), Inches(y + 0.63), Inches(bw - 0.08), Inches(0.24),
+            [{"text": dt, "size": 8, "color": (WHITE if ours else GRAY), "align": PP_ALIGN.CENTER}])
+        if i > 0:
+            txt(s, Inches(bx - 0.265), Inches(y + 0.16), Inches(0.3), Inches(0.5),
+                [{"text": "→", "size": 15, "bold": True, "color": GRAY, "align": PP_ALIGN.CENTER}])
+collab = [("Multi-agent risks", "'25-02", False), ("Alignment Tipping", "'25-10", False),
+          ("Emergent Collusion", "'26-09", False), ("SoK: Fail Together", "'26-09", False),
+          ("OURS: collusion", "'26-10", True)]
+evalu = [("In-ctx reward hack", "'24-02", False), ("Self-refine hack", "'24-07", False),
+         ("Honesty→Subterfuge", "'24-10", False), ("Darwin-Gödel hack", "'25-05", False),
+         ("More Convincing", "'26-07", False), ("OURS: judge drift", "'26-10", True)]
+objec = [("Evaluating goal drift", "'25-05", False), ("Asymmetric drift", "'26-03", False),
+         ("Intent drift @scale", "'26-09", False), ("OURS: goal drift", "'26-10", True)]
+tl_row(1.9, "Collaboration", RGBColor(0x2A, 0x9D, 0x8F), collab)
+tl_row(3.45, "Evaluation", ACC, evalu)
+tl_row(5.0, "Objective", AMBER, objec)
+txt(s, Inches(0.6), Inches(6.25), Inches(12.1), Inches(0.7),
+    [{"text": "Dates are arXiv submission (YY-MM). Each trail is the prior work our experiment extends; all three attach to the paper we build on — “Your Agent May Misevolve” (2509.26354, '25-09).",
+      "size": 11.5, "italic": True, "color": GRAY}])
+pagenum(s)
+
 # ============================================================ 34 takeaways
 s = slide()
 rect(s, 0, 0, SW, SH, NAVY)
