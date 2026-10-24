@@ -347,7 +347,7 @@ card(s, Inches(6.8), Inches(1.75), Inches(5.9), Inches(4.4), "REPRODUCIBILITY", 
     "All code is in coupled_misevolution/: loop, prompts, model backends, analysis and the 7 figures, which regenerate from the saved results",
     "Fixed test items, seeds and prompts. Each result file keeps the configuration, per-round metrics, every agent's notes and per-item verdicts",
     "PLAN.md logs the hypotheses, predictions and every design change with dates",
-    "Not yet pushed to GitHub (commit pending). Data: the GSM8K test split"], GREENOK)
+    "Pushed to GitHub (github.com/Mayank471/Misevolutions, folder coupled_misevolution/). Data: the GSM8K test split"], GREENOK)
 bar(s, "Honest summary: the question has changed from 'does each layer drift' to 'does drift spread, and when'. The first answer is: not from a flawed reward alone, and only in some models through shared notes.",
     y=Inches(6.3), h=Inches(0.72), size=12.5)
 pagenum(s)
