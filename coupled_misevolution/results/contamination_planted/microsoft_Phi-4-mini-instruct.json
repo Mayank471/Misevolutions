@@ -1,0 +1,71 @@
+{
+ "model": "microsoft/Phi-4-mini-instruct",
+ "notes_from": "microsoft/Phi-4-mini-instruct",
+ "judge": {
+  "none": {
+   "on_wrong": 0.32,
+   "on_right": 0.98,
+   "invalid": 0
+  },
+  "E": {
+   "on_wrong": 0.4,
+   "on_right": 0.98,
+   "invalid": 0
+  },
+  "O": {
+   "on_wrong": 0.7,
+   "on_right": 0.98,
+   "invalid": 0
+  },
+  "C": {
+   "on_wrong": 0.42,
+   "on_right": 1.0,
+   "invalid": 0
+  }
+ },
+ "reviewer": {
+  "none": {
+   "on_wrong": 0.16,
+   "on_right": 0.94,
+   "invalid": 0
+  },
+  "E": {
+   "on_wrong": 0.14,
+   "on_right": 0.94,
+   "invalid": 0
+  },
+  "O": {
+   "on_wrong": 0.24,
+   "on_right": 0.96,
+   "invalid": 0
+  },
+  "C": {
+   "on_wrong": 0.2,
+   "on_right": 0.96,
+   "invalid": 0
+  }
+ },
+ "worker": {
+  "none": {
+   "check": 1.0,
+   "words": 161.3,
+   "acc": 0.9
+  },
+  "E": {
+   "check": 1.0,
+   "words": 152.73333333333332,
+   "acc": 0.8333333333333334
+  },
+  "O": {
+   "check": 0.5333333333333333,
+   "words": 62.1,
+   "acc": 0.7666666666666667
+  },
+  "C": {
+   "check": 1.0,
+   "words": 136.03333333333333,
+   "acc": 0.7333333333333333
+  }
+ },
+ "seconds": 446
+}

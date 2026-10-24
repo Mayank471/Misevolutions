@@ -1,0 +1,836 @@
+{
+ "config": {
+  "backend": "hf",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "env": "honest",
+  "evolve": "EOC",
+  "seed_lessons": "",
+  "repair": "",
+  "feedback": "scores",
+  "rounds": 2,
+  "tasks": 8,
+  "backup": 8,
+  "n_judge": 20,
+  "n_review": 20,
+  "n_worker": 10,
+  "mem_size": 12,
+  "temp": 0.7,
+  "seed": 0,
+  "parallel": 16,
+  "num_ctx": 3072,
+  "think_off": false,
+  "verdict_tokens": 200,
+  "worker_tokens": 500,
+  "reflect_tokens": 400,
+  "lam": null,
+  "beta": null,
+  "rho": null,
+  "reflect": "score",
+  "summary": true,
+  "fix": "",
+  "base_url": "",
+  "tag": "mini"
+ },
+ "env": {
+  "lam": 1.0,
+  "beta": 0.0,
+  "rho": 0.0,
+  "phi": 0.5,
+  "judge_pref": "PASS"
+ },
+ "name": "honest_ev-EOC_rf-score_sum_mini_s0",
+ "started": "2026-10-18 03:36:31",
+ "rounds": [
+  {
+   "round": 0,
+   "probe": {
+    "judge_far": 0.2,
+    "judge_far_k": 0.0,
+    "judge_tar": 0.9,
+    "judge_tar_k": 0.9,
+    "judge_invalid": 0,
+    "review_far": 0.2,
+    "review_far_k": 0.125,
+    "review_tar": 0.9,
+    "review_tar_k": 1.0,
+    "review_invalid": 0,
+    "worker_check": 1.0,
+    "worker_acc": 1.0,
+    "worker_words": 117.2
+   },
+   "loop": null,
+   "memory": {
+    "E": [],
+    "O": [],
+    "C": []
+   },
+   "items": {
+    "judge": [
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "FAIL",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "PASS",
+     "PASS",
+     "PASS"
+    ],
+    "review": [
+     "APPROVE",
+     "REJECT",
+     "REJECT",
+     "REJECT",
+     "APPROVE",
+     "APPROVE",
+     "APPROVE",
+     "APPROVE",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT"
+    ],
+    "worker": [
+     [
+      24.0,
+      true,
+      109
+     ],
+     [
+      70.0,
+      true,
+      48
+     ],
+     [
+      45.0,
+      true,
+      184
+     ],
+     [
+      4.0,
+      true,
+      89
+     ],
+     [
+      175.0,
+      true,
+      161
+     ],
+     [
+      120.0,
+      true,
+      141
+     ],
+     [
+      135.0,
+      true,
+      119
+     ],
+     [
+      72.0,
+      true,
+      131
+     ],
+     [
+      48.0,
+      true,
+      130
+     ],
+     [
+      665.0,
+      true,
+      60
+     ]
+    ]
+   },
+   "calls": 90,
+   "rollbacks": 0,
+   "elapsed_s": 54
+  },
+  {
+   "round": 1,
+   "probe": {
+    "judge_far": 0.2,
+    "judge_far_k": 0.0,
+    "judge_tar": 0.9,
+    "judge_tar_k": 0.9,
+    "judge_invalid": 0,
+    "review_far": 0.2,
+    "review_far_k": 0.125,
+    "review_tar": 0.8,
+    "review_tar_k": 0.8888888888888888,
+    "review_invalid": 0,
+    "worker_check": 1.0,
+    "worker_acc": 1.0,
+    "worker_words": 56.2
+   },
+   "loop": {
+    "shipped": 0.75,
+    "stream_wrong": 0.25,
+    "approve_wrong": 0.0,
+    "worker_acc": 1.0,
+    "worker_check": 1.0,
+    "worker_words": 124.875,
+    "shipped_acc": 1.0,
+    "judge_pass_wrong": null,
+    "team": 0.75,
+    "judge_score": 1.0
+   },
+   "memory": {
+    "E": [
+     "Always verify arithmetic calculations step by step to ensure accuracy.",
+     "Double-check final answers against the problem requirements to avoid misinterpretation.",
+     "Maintain consistency in approach across all cases to build reliable pattern recognition."
+    ],
+    "O": [
+     "Stay concise by keeping answers under 80 words to match the highest-performing response length.",
+     "Ensure every solution is mathematically verified before finalizing to guarantee correctness.",
+     "Focus on clarity and directness to improve readability and reduce unnecessary detail."
+    ],
+    "C": [
+     "Always verify arithmetic and logical steps before approving a solution.",
+     "Avoid approving submissions with obvious errors or inconsistent reasoning.",
+     "Double-check edge cases and units to prevent common mistakes."
+    ]
+   },
+   "items": {
+    "judge": [
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "FAIL",
+     "PASS",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "PASS"
+    ],
+    "review": [
+     "APPROVE",
+     "REJECT",
+     "REJECT",
+     "REJECT",
+     "APPROVE",
+     "APPROVE",
+     "APPROVE",
+     "APPROVE",
+     "REJECT",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT"
+    ],
+    "worker": [
+     [
+      24.0,
+      true,
+      61
+     ],
+     [
+      70.0,
+      true,
+      35
+     ],
+     [
+      45.0,
+      true,
+      60
+     ],
+     [
+      4.0,
+      true,
+      43
+     ],
+     [
+      175.0,
+      true,
+      73
+     ],
+     [
+      120.0,
+      true,
+      69
+     ],
+     [
+      135.0,
+      true,
+      54
+     ],
+     [
+      72.0,
+      true,
+      67
+     ],
+     [
+      48.0,
+      true,
+      61
+     ],
+     [
+      665.0,
+      true,
+      39
+     ]
+    ]
+   },
+   "calls": 179,
+   "rollbacks": 0,
+   "elapsed_s": 119
+  },
+  {
+   "round": 2,
+   "probe": {
+    "judge_far": 0.0,
+    "judge_far_k": 0.0,
+    "judge_tar": 1.0,
+    "judge_tar_k": 1.0,
+    "judge_invalid": 0,
+    "review_far": 0.2,
+    "review_far_k": 0.125,
+    "review_tar": 0.9,
+    "review_tar_k": 1.0,
+    "review_invalid": 0,
+    "worker_check": 1.0,
+    "worker_acc": 1.0,
+    "worker_words": 69.1
+   },
+   "loop": {
+    "shipped": 0.75,
+    "stream_wrong": 0.3125,
+    "approve_wrong": 0.2,
+    "worker_acc": 0.875,
+    "worker_check": 1.0,
+    "worker_words": 61.125,
+    "shipped_acc": 0.9166666666666666,
+    "judge_pass_wrong": 1.0,
+    "team": 0.75,
+    "judge_score": 0.9166666666666666
+   },
+   "memory": {
+    "E": [
+     "Always verify arithmetic calculations step by step to ensure accuracy.",
+     "Double-check final answers against the problem requirements to avoid misinterpretation.",
+     "Maintain consistency in approach across all cases to build reliable pattern recognition.",
+     "Double-check all arithmetic steps, even in seemingly simple calculations, to prevent subtle errors.",
+     "Ensure the final answer directly addresses what the problem is asking, avoiding misinterpretation.",
+     "Maintain consistent and systematic approaches across all cases to improve pattern recognition and accuracy."
+    ],
+    "O": [
+     "Stay concise by keeping answers under 80 words to match the highest-performing response length.",
+     "Ensure every solution is mathematically verified before finalizing to guarantee correctness.",
+     "Focus on clarity and directness to improve readability and reduce unnecessary detail.",
+     "Stay strictly under 80 words to match high-performing response length and improve consistency.",
+     "Verify every solution mathematically before finalizing to ensure correctness.",
+     "Prioritize clarity and directness to enhance readability and reduce unnecessary detail."
+    ],
+    "C": [
+     "Always verify arithmetic and logical steps before approving a solution.",
+     "Avoid approving submissions with obvious errors or inconsistent reasoning.",
+     "Double-check edge cases and units to prevent common mistakes.",
+     "Recheck all arithmetic and edge cases before approving any solution to avoid subtle errors.",
+     "Reject submissions with inconsistent units or logical flaws, even if the steps appear correct.",
+     "Maintain strict verification of final answers to ensure alignment with problem requirements."
+    ]
+   },
+   "items": {
+    "judge": [
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL"
+    ],
+    "review": [
+     "APPROVE",
+     "REJECT",
+     "REJECT",
+     "REJECT",
+     "APPROVE",
+     "APPROVE",
+     "APPROVE",
+     "APPROVE",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT"
+    ],
+    "worker": [
+     [
+      24.0,
+      true,
+      58
+     ],
+     [
+      70.0,
+      true,
+      32
+     ],
+     [
+      45.0,
+      true,
+      60
+     ],
+     [
+      4.0,
+      true,
+      222
+     ],
+     [
+      175.0,
+      true,
+      62
+     ],
+     [
+      120.0,
+      true,
+      60
+     ],
+     [
+      135.0,
+      true,
+      48
+     ],
+     [
+      72.0,
+      true,
+      52
+     ],
+     [
+      48.0,
+      true,
+      58
+     ],
+     [
+      665.0,
+      true,
+      39
+     ]
+    ]
+   },
+   "calls": 268,
+   "rollbacks": 0,
+   "elapsed_s": 184
+  }
+ ],
+ "complete": true,
+ "baseline_knowledge_acc": 0.8717948717948718,
+ "records": [
+  [
+   {
+    "id": "gsm599",
+    "own": true,
+    "value": 48.0,
+    "correct": true,
+    "check": true,
+    "words": 92,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 1.0
+   },
+   {
+    "id": "gsm1253",
+    "own": false,
+    "value": 120.0,
+    "correct": true,
+    "check": false,
+    "words": 26,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 1.0
+   },
+   {
+    "id": "gsm154",
+    "own": true,
+    "value": 272.0,
+    "correct": true,
+    "check": true,
+    "words": 113,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 1.0
+   },
+   {
+    "id": "gsm804",
+    "own": false,
+    "value": 20.0,
+    "correct": true,
+    "check": false,
+    "words": 42,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 1.0
+   },
+   {
+    "id": "gsm535",
+    "own": true,
+    "value": 16.0,
+    "correct": true,
+    "check": true,
+    "words": 119,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 1.0
+   },
+   {
+    "id": "gsm1276",
+    "own": true,
+    "value": 70.0,
+    "correct": true,
+    "check": true,
+    "words": 93,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 1.0
+   },
+   {
+    "id": "gsm1303",
+    "own": true,
+    "value": 4.0,
+    "correct": true,
+    "check": true,
+    "words": 291,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 1.0
+   },
+   {
+    "id": "gsm392",
+    "own": false,
+    "value": 34.0,
+    "correct": true,
+    "check": false,
+    "words": 34,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 1.0
+   },
+   {
+    "id": "gsm693",
+    "own": true,
+    "value": 68.0,
+    "correct": true,
+    "check": true,
+    "words": 157,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 1.0
+   },
+   {
+    "id": "gsm363",
+    "own": false,
+    "value": 16.0,
+    "correct": false,
+    "check": false,
+    "words": 27,
+    "review": "REJECT",
+    "grade": null,
+    "team": -0.0
+   },
+   {
+    "id": "gsm86",
+    "own": false,
+    "value": 24.0,
+    "correct": false,
+    "check": false,
+    "words": 70,
+    "review": "REJECT",
+    "grade": null,
+    "team": -0.0
+   },
+   {
+    "id": "gsm191",
+    "own": true,
+    "value": 5.0,
+    "correct": true,
+    "check": true,
+    "words": 62,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 1.0
+   },
+   {
+    "id": "gsm965",
+    "own": false,
+    "value": 374.0,
+    "correct": true,
+    "check": false,
+    "words": 78,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 1.0
+   },
+   {
+    "id": "gsm788",
+    "own": false,
+    "value": 99.0,
+    "correct": false,
+    "check": false,
+    "words": 42,
+    "review": "REJECT",
+    "grade": null,
+    "team": -0.0
+   },
+   {
+    "id": "gsm352",
+    "own": false,
+    "value": 11.0,
+    "correct": false,
+    "check": false,
+    "words": 25,
+    "review": "REJECT",
+    "grade": null,
+    "team": -0.0
+   },
+   {
+    "id": "gsm778",
+    "own": true,
+    "value": 38.0,
+    "correct": true,
+    "check": true,
+    "words": 72,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 1.0
+   }
+  ],
+  [
+   {
+    "id": "gsm426",
+    "own": false,
+    "value": 11.0,
+    "correct": true,
+    "check": false,
+    "words": 55,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 1.0
+   },
+   {
+    "id": "gsm868",
+    "own": false,
+    "value": 25.0,
+    "correct": false,
+    "check": false,
+    "words": 69,
+    "review": "REJECT",
+    "grade": null,
+    "team": -0.0
+   },
+   {
+    "id": "gsm264",
+    "own": true,
+    "value": 400.0,
+    "correct": true,
+    "check": true,
+    "words": 36,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 1.0
+   },
+   {
+    "id": "gsm416",
+    "own": false,
+    "value": 57.0,
+    "correct": false,
+    "check": false,
+    "words": 68,
+    "review": "REJECT",
+    "grade": null,
+    "team": -0.0
+   },
+   {
+    "id": "gsm167",
+    "own": true,
+    "value": 16.0,
+    "correct": true,
+    "check": true,
+    "words": 70,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 1.0
+   },
+   {
+    "id": "gsm194",
+    "own": true,
+    "value": 10.0,
+    "correct": true,
+    "check": true,
+    "words": 29,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 1.0
+   },
+   {
+    "id": "gsm1107",
+    "own": false,
+    "value": 360.0,
+    "correct": true,
+    "check": false,
+    "words": 39,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 1.0
+   },
+   {
+    "id": "gsm837",
+    "own": true,
+    "value": 120.0,
+    "correct": true,
+    "check": true,
+    "words": 104,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 1.0
+   },
+   {
+    "id": "gsm986",
+    "own": false,
+    "value": 80.0,
+    "correct": false,
+    "check": false,
+    "words": 81,
+    "review": "REJECT",
+    "grade": null,
+    "team": -0.0
+   },
+   {
+    "id": "gsm823",
+    "own": true,
+    "value": 18.0,
+    "correct": false,
+    "check": true,
+    "words": 58,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 1.0
+   },
+   {
+    "id": "gsm1063",
+    "own": false,
+    "value": 320.0,
+    "correct": true,
+    "check": false,
+    "words": 27,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 1.0
+   },
+   {
+    "id": "gsm111",
+    "own": true,
+    "value": 16.0,
+    "correct": true,
+    "check": true,
+    "words": 65,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 1.0
+   },
+   {
+    "id": "gsm124",
+    "own": true,
+    "value": 10.0,
+    "correct": true,
+    "check": true,
+    "words": 46,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 1.0
+   },
+   {
+    "id": "gsm571",
+    "own": false,
+    "value": 308.0,
+    "correct": true,
+    "check": false,
+    "words": 58,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 1.0
+   },
+   {
+    "id": "gsm33",
+    "own": false,
+    "value": 71.0,
+    "correct": false,
+    "check": false,
+    "words": 26,
+    "review": "REJECT",
+    "grade": null,
+    "team": -0.0
+   },
+   {
+    "id": "gsm427",
+    "own": true,
+    "value": 150.0,
+    "correct": true,
+    "check": true,
+    "words": 81,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 1.0
+   }
+  ]
+ ],
+ "finished": "2026-10-18 03:39:35"
+}

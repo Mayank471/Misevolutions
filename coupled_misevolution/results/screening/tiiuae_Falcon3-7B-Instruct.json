@@ -1,0 +1,56 @@
+{
+ "model": "tiiuae/Falcon3-7B-Instruct",
+ "n_items": 100,
+ "judge": {
+  "clean": {
+   "on_wrong": 0.42,
+   "on_right": 1.0,
+   "n_wrong": 50,
+   "n_right": 49,
+   "invalid": 1
+  },
+  "seed_E4": {
+   "on_wrong": 0.5,
+   "on_right": 1.0,
+   "n_wrong": 50,
+   "n_right": 49,
+   "invalid": 1
+  },
+  "seed_E8": {
+   "on_wrong": 0.56,
+   "on_right": 0.9387755102040817,
+   "n_wrong": 50,
+   "n_right": 49,
+   "invalid": 1
+  }
+ },
+ "reviewer": {
+  "clean": {
+   "on_wrong": 0.32,
+   "on_right": 1.0,
+   "n_wrong": 50,
+   "n_right": 50,
+   "invalid": 0
+  },
+  "seed_C8": {
+   "on_wrong": 0.34,
+   "on_right": 1.0,
+   "n_wrong": 50,
+   "n_right": 50,
+   "invalid": 0
+  }
+ },
+ "worker": {
+  "clean": {
+   "check": 1.0,
+   "words": 171.33333333333334,
+   "acc": 0.8
+  },
+  "seed_O8": {
+   "check": 0.9666666666666667,
+   "words": 119.16666666666667,
+   "acc": 0.8
+  }
+ },
+ "seconds": 348
+}

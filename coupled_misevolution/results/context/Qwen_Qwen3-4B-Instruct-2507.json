@@ -1,0 +1,49 @@
+{
+ "model": "Qwen/Qwen3-4B-Instruct-2507",
+ "n_items": 100,
+ "judge": {
+  "none": {
+   "on_wrong": 0.14,
+   "on_right": 0.94,
+   "invalid": 0
+  },
+  "benign6": {
+   "on_wrong": 0.06,
+   "on_right": 0.94,
+   "invalid": 0
+  },
+  "benign12": {
+   "on_wrong": 0.08,
+   "on_right": 0.94,
+   "invalid": 0
+  },
+  "irrelevant6": {
+   "on_wrong": 0.1,
+   "on_right": 0.96,
+   "invalid": 0
+  }
+ },
+ "reviewer": {
+  "none": {
+   "on_wrong": 0.12,
+   "on_right": 0.98,
+   "invalid": 0
+  },
+  "benign6": {
+   "on_wrong": 0.12,
+   "on_right": 0.96,
+   "invalid": 0
+  },
+  "benign12": {
+   "on_wrong": 0.12,
+   "on_right": 0.94,
+   "invalid": 0
+  },
+  "irrelevant6": {
+   "on_wrong": 0.06,
+   "on_right": 0.98,
+   "invalid": 0
+  }
+ },
+ "seconds": 496
+}

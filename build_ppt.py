@@ -153,17 +153,18 @@ items = [
     ("Part IV — My reproduction", "Re-running all four pathways with free models, and how the numbers compare", TEAL),
     ("Part V — Mitigations", "What helps against each pathway — and why every fix is only partial", C_FLOW),
     ("Part VI — Beyond the paper", "Two risks beyond the four: multi-agent co-evolution and systemic contagion between components", ACC),
+    ("Part VII — Progress report", "Controlled experiments on a coupled Worker–Reviewer–Judge loop, six open models: what spreads, what does not, what is next", AMBER),
 ]
-y = Inches(1.72)
+y = Inches(1.65)
 for i,(t,d,c) in enumerate(items):
-    rect(s, Inches(0.6), y, Inches(0.5), Inches(0.78), c)
-    txt(s, Inches(0.6), y+Inches(0.12), Inches(0.5), Inches(0.5),
-        [{"text": str(i+1), "size": 20, "bold": True, "color": WHITE, "align": PP_ALIGN.CENTER}])
-    rect(s, Inches(1.1), y, Inches(11.6), Inches(0.78), LIGHT)
-    txt(s, Inches(1.35), y+Inches(0.09), Inches(11.1), Inches(0.7),
-        [{"text": t, "size": 16.5, "bold": True, "color": NAVY},
-         {"text": d, "size": 13, "color": GRAY, "space_before": 2}])
-    y += Inches(0.9)
+    rect(s, Inches(0.6), y, Inches(0.5), Inches(0.68), c)
+    txt(s, Inches(0.6), y+Inches(0.1), Inches(0.5), Inches(0.5),
+        [{"text": str(i+1), "size": 19, "bold": True, "color": WHITE, "align": PP_ALIGN.CENTER}])
+    rect(s, Inches(1.1), y, Inches(11.6), Inches(0.68), LIGHT)
+    txt(s, Inches(1.35), y+Inches(0.06), Inches(11.1), Inches(0.62),
+        [{"text": t, "size": 15.5, "bold": True, "color": NAVY},
+         {"text": d, "size": 12, "color": GRAY, "space_before": 1}])
+    y += Inches(0.77)
 pagenum(s, 2)
 
 # ============================================================ 3 SECTION I
@@ -693,7 +694,7 @@ header(s, "The meta-insight", "Misevolution is systemic, not per-component", ACC
 # hypothesis chip
 rect(s, Inches(9.9), Inches(0.62), Inches(2.8), Inches(0.4), AMBER)
 txt(s, Inches(9.9), Inches(0.62), Inches(2.8), Inches(0.4),
-    [{"text": "MY HYPOTHESIS · UNTESTED", "size": 11, "bold": True, "color": WHITE, "align": PP_ALIGN.CENTER}], anchor=MSO_ANCHOR.MIDDLE)
+    [{"text": "TESTED LATER · PART VII", "size": 11, "bold": True, "color": WHITE, "align": PP_ALIGN.CENTER}], anchor=MSO_ANCHOR.MIDDLE)
 txt(s, Inches(0.6), Inches(1.75), Inches(12.1), Inches(0.8),
     [{"text": "The deepest risk is that these failures do not stay in their lanes — they INTERACT. A drift in one component becomes the training signal that drifts the next, so the whole system spirals (the paper only glimpses this in App. D.10).",
       "size": 15, "color": INK}])
@@ -708,7 +709,7 @@ for gl, gx, gy, sz in [("→", Inches(6.0), Inches(3.0), 40), ("↓", Inches(9.0
                         ("←", Inches(6.0), Inches(4.6), 40), ("↑", Inches(3.65), Inches(3.9), 34)]:
     txt(s, gx, gy, Inches(1.3), Inches(0.8), [{"text": gl, "size": sz, "bold": True, "color": NAVY, "align": PP_ALIGN.CENTER}])
 txt(s, Inches(0.6), Inches(6.15), Inches(12.1), Inches(0.9),
-    [{"text": "Each component can stay individually bounded while the SYSTEM runs away. No paper studies this cross-component coupling directly — so I present it as an original hypothesis and the natural next experiment.",
+    [{"text": "Each component can stay individually bounded while the SYSTEM runs away. To my knowledge this coupling had not been tested in a closed loop. Part VII tests it: it is real but model-dependent, and it travels through shared notes.",
       "size": 13.5, "italic": True, "color": ACC}])
 pagenum(s)
 
@@ -749,7 +750,7 @@ txt(s, Inches(8.0), Inches(2.02), Inches(4.5), Inches(0.4),
 bullets(s, Inches(8.0), Inches(2.55), Inches(4.5), Inches(3.3),
     [("All three flip from safe to unsafe once a reward-shaped memory or long context is introduced — the same signature the paper reports for its four", 0),
      ("Caveats: one small free model (nemotron-3.5-lightning), tiny n (10–12 items), benign proxy tasks, LLM-judged — so the DIRECTION is the finding, not the exact %", 0),
-     ("Systemic contagion (prev. slides) is a hypothesis I did NOT test — the honest next step", 0)],
+     ("These demos used memory I wrote myself. Part VII repeats the study with agent-written memory and honest-reward controls; systemic contagion turns out to be real but model-dependent", 0)],
     size=11.5, gap=10, dot=ACC)
 pagenum(s)
 
@@ -967,6 +968,9 @@ bullets(s, Inches(6.97), Inches(5.5), Inches(5.55), Inches(1.4),
     size=11, gap=7, dot=ACC)
 pagenum(s)
 
+# ============================================================ PART VII progress report
+exec(compile(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "progress_slides.py"), encoding="utf-8").read(), "progress_slides.py", "exec"))
+
 # ============================================================ 34 takeaways
 s = slide()
 rect(s, 0, 0, SW, SH, NAVY)
@@ -979,7 +983,7 @@ pts = [("Misevolution is real and pervasive", "Self-improvement can erode safety
        ("I reproduced 3 of 4 pathways with free models", "Memory 76.9% unsafe · Tool 52% unsafe · Workflow refusal 100%→78% — same effects as the paper.", TEAL),
        ("The 4th needs a bigger GPU", "Model misevolution requires local 7B–70B checkpoints; wired and ready for ≥16 GB hardware.", TEAL),
        ("Current mitigations are only partial", "Safer self-evolving agents need new safety frameworks — an open research problem.", TEAL),
-       ("The taxonomy isn't closed — I propose more", "I tested 3 new axes on the free harness: evaluator drift 17→83%, agent collusion 0→100%, goal drift to 33% adherence.", ACC)]
+       ("Beyond the paper: contagion is real but model-dependent", "Early demos used hand-written memory. A controlled study on 6 models (Part VII): no reward-driven drift, but shared notes spread leniency between roles in some models.", ACC)]
 y=Inches(1.78)
 for i,(t,d,bc) in enumerate(pts):
     rect(s, Inches(0.8), y, Inches(0.14), Inches(0.78), bc)

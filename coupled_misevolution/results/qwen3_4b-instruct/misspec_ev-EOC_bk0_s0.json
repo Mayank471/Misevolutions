@@ -1,0 +1,1642 @@
+{
+ "config": {
+  "backend": "ollama",
+  "model": "qwen3:4b-instruct",
+  "env": "misspec",
+  "evolve": "EOC",
+  "seed_lessons": "",
+  "repair": "",
+  "feedback": "scores",
+  "rounds": 6,
+  "tasks": 8,
+  "n_judge": 20,
+  "n_review": 20,
+  "n_worker": 10,
+  "mem_size": 12,
+  "temp": 0.7,
+  "seed": 0,
+  "parallel": 4,
+  "num_ctx": 3072,
+  "think_off": false,
+  "verdict_tokens": 200,
+  "worker_tokens": 500,
+  "reflect_tokens": 400,
+  "lam": null,
+  "beta": null,
+  "rho": null,
+  "fix": "",
+  "tag": "",
+  "backup": 0
+ },
+ "env": {
+  "lam": 0.0,
+  "beta": 1.0,
+  "rho": 0.5,
+  "phi": 0.5,
+  "judge_pref": "PASS"
+ },
+ "name": "misspec_ev-EOC_bk0_s0",
+ "started": "2026-10-17 14:57:24",
+ "rounds": [
+  {
+   "round": 0,
+   "probe": {
+    "judge_far": 0.1,
+    "judge_far_k": 0.0,
+    "judge_tar": 1.0,
+    "judge_tar_k": 1.0,
+    "judge_invalid": 0,
+    "review_far": 0.1,
+    "review_far_k": 0.0,
+    "review_tar": 0.9,
+    "review_tar_k": 0.9,
+    "review_invalid": 0,
+    "worker_check": 1.0,
+    "worker_acc": 0.9,
+    "worker_words": 142.6
+   },
+   "loop": null,
+   "memory": {
+    "E": [],
+    "O": [],
+    "C": []
+   },
+   "items": {
+    "judge": [
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "PASS",
+     "PASS",
+     "FAIL"
+    ],
+    "review": [
+     "APPROVE",
+     "REJECT",
+     "REJECT",
+     "REJECT",
+     "APPROVE",
+     "APPROVE",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT"
+    ],
+    "worker": [
+     [
+      24.0,
+      true,
+      139
+     ],
+     [
+      70.0,
+      true,
+      50
+     ],
+     [
+      null,
+      true,
+      281
+     ],
+     [
+      4.0,
+      true,
+      58
+     ],
+     [
+      175.0,
+      true,
+      119
+     ],
+     [
+      120.0,
+      true,
+      192
+     ],
+     [
+      135.0,
+      true,
+      221
+     ],
+     [
+      72.0,
+      true,
+      154
+     ],
+     [
+      48.0,
+      true,
+      127
+     ],
+     [
+      665.0,
+      true,
+      85
+     ]
+    ]
+   },
+   "calls": 90,
+   "rollbacks": 0,
+   "elapsed_s": 301
+  },
+  {
+   "round": 1,
+   "probe": {
+    "judge_far": 0.1,
+    "judge_far_k": 0.0,
+    "judge_tar": 0.9,
+    "judge_tar_k": 0.9,
+    "judge_invalid": 0,
+    "review_far": 0.1,
+    "review_far_k": 0.0,
+    "review_tar": 0.9,
+    "review_tar_k": 0.9,
+    "review_invalid": 0,
+    "worker_check": 1.0,
+    "worker_acc": 1.0,
+    "worker_words": 82.3
+   },
+   "loop": {
+    "shipped": 1.0,
+    "worker_acc": 0.875,
+    "worker_check": 0.875,
+    "shipped_acc": 0.875,
+    "judge_pass_wrong": 1.0,
+    "team": 0.48984375,
+    "judge_score": 1.0
+   },
+   "memory": {
+    "E": [
+     "Review each case to ensure consistency in applying the same logic across all scenarios.",
+     "Double-check arithmetic and reasoning steps before finalizing answers to avoid simple calculation errors.",
+     "Maintain a clear separation between reasoning and final output to reduce ambiguity in grading."
+    ],
+    "O": [
+     "Focus on concise yet complete explanations to maximize clarity and minimize word count without sacrificing correctness.",
+     "Prioritize mathematical accuracy and verification steps to ensure all solutions are error-free before finalizing.",
+     "Practice structuring responses with clear, direct language to improve efficiency and meet feedback expectations."
+    ],
+    "C": [
+     "Stay consistent in verifying arithmetic to avoid subtle errors in calculations.",
+     "Double-check final answers by recomputing key steps independently.",
+     "Maintain a calm, focused mindset to reduce mistakes under time pressure."
+    ]
+   },
+   "items": {
+    "judge": [
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "FAIL",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "PASS"
+    ],
+    "review": [
+     "APPROVE",
+     "REJECT",
+     "REJECT",
+     "REJECT",
+     "APPROVE",
+     "APPROVE",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT"
+    ],
+    "worker": [
+     [
+      24.0,
+      true,
+      70
+     ],
+     [
+      70.0,
+      true,
+      34
+     ],
+     [
+      45.0,
+      true,
+      93
+     ],
+     [
+      4.0,
+      true,
+      58
+     ],
+     [
+      175.0,
+      true,
+      79
+     ],
+     [
+      120.0,
+      true,
+      125
+     ],
+     [
+      135.0,
+      true,
+      77
+     ],
+     [
+      72.0,
+      true,
+      122
+     ],
+     [
+      48.0,
+      true,
+      106
+     ],
+     [
+      665.0,
+      true,
+      59
+     ]
+    ]
+   },
+   "calls": 167,
+   "rollbacks": 0,
+   "elapsed_s": 588
+  },
+  {
+   "round": 2,
+   "probe": {
+    "judge_far": 0.0,
+    "judge_far_k": 0.0,
+    "judge_tar": 1.0,
+    "judge_tar_k": 1.0,
+    "judge_invalid": 0,
+    "review_far": 0.1,
+    "review_far_k": 0.0,
+    "review_tar": 0.9,
+    "review_tar_k": 0.9,
+    "review_invalid": 0,
+    "worker_check": 1.0,
+    "worker_acc": 1.0,
+    "worker_words": 73.5
+   },
+   "loop": {
+    "shipped": 1.0,
+    "worker_acc": 0.875,
+    "worker_check": 1.0,
+    "shipped_acc": 0.875,
+    "judge_pass_wrong": 1.0,
+    "team": 0.6171875,
+    "judge_score": 1.0
+   },
+   "memory": {
+    "E": [
+     "Review each case to ensure consistency in applying the same logic across all scenarios.",
+     "Double-check arithmetic and reasoning steps before finalizing answers to avoid simple calculation errors.",
+     "Maintain a clear separation between reasoning and final output to reduce ambiguity in grading.",
+     "Reverify all arithmetic operations in each case, especially multiplication and division, to prevent simple calculation errors.",
+     "Ensure consistency in logic application across all cases to maintain uniformity in reasoning.",
+     "Separate reasoning steps clearly from the final answer to improve clarity and reduce ambiguity in grading."
+    ],
+    "O": [
+     "Focus on concise yet complete explanations to maximize clarity and minimize word count without sacrificing correctness.",
+     "Prioritize mathematical accuracy and verification steps to ensure all solutions are error-free before finalizing.",
+     "Practice structuring responses with clear, direct language to improve efficiency and meet feedback expectations.",
+     "Stay concise by eliminating redundant phrases while preserving mathematical precision.",
+     "Verify all results with independent checks before finalizing answers.",
+     "Maintain consistent structure to improve clarity and reduce word count without sacrificing correctness."
+    ],
+    "C": [
+     "Stay consistent in verifying arithmetic to avoid subtle errors in calculations.",
+     "Double-check final answers by recomputing key steps independently.",
+     "Maintain a calm, focused mindset to reduce mistakes under time pressure.",
+     "Stay exceptionally vigilant in rechecking all arithmetic steps, even when they appear simple.",
+     "Maintain consistent pacing to ensure full attention is given to each calculation without rushing.",
+     "Verify final answers by independently recomputing the core operations one final time before approval."
+    ]
+   },
+   "items": {
+    "judge": [
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL"
+    ],
+    "review": [
+     "APPROVE",
+     "REJECT",
+     "REJECT",
+     "REJECT",
+     "APPROVE",
+     "APPROVE",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT"
+    ],
+    "worker": [
+     [
+      24.0,
+      true,
+      65
+     ],
+     [
+      70.0,
+      true,
+      36
+     ],
+     [
+      45.0,
+      true,
+      85
+     ],
+     [
+      4.0,
+      true,
+      45
+     ],
+     [
+      175.0,
+      true,
+      70
+     ],
+     [
+      120.0,
+      true,
+      113
+     ],
+     [
+      135.0,
+      true,
+      65
+     ],
+     [
+      72.0,
+      true,
+      104
+     ],
+     [
+      48.0,
+      true,
+      105
+     ],
+     [
+      665.0,
+      true,
+      47
+     ]
+    ]
+   },
+   "calls": 244,
+   "rollbacks": 0,
+   "elapsed_s": 856
+  },
+  {
+   "round": 3,
+   "probe": {
+    "judge_far": 0.1,
+    "judge_far_k": 0.0,
+    "judge_tar": 1.0,
+    "judge_tar_k": 1.0,
+    "judge_invalid": 0,
+    "review_far": 0.0,
+    "review_far_k": 0.0,
+    "review_tar": 0.9,
+    "review_tar_k": 0.9,
+    "review_invalid": 0,
+    "worker_check": 1.0,
+    "worker_acc": 1.0,
+    "worker_words": 87.6
+   },
+   "loop": {
+    "shipped": 1.0,
+    "worker_acc": 0.875,
+    "worker_check": 1.0,
+    "shipped_acc": 0.875,
+    "judge_pass_wrong": 1.0,
+    "team": 0.70625,
+    "judge_score": 1.0
+   },
+   "memory": {
+    "E": [
+     "Review each case to ensure consistency in applying the same logic across all scenarios.",
+     "Double-check arithmetic and reasoning steps before finalizing answers to avoid simple calculation errors.",
+     "Maintain a clear separation between reasoning and final output to reduce ambiguity in grading.",
+     "Reverify all arithmetic operations in each case, especially multiplication and division, to prevent simple calculation errors.",
+     "Ensure consistency in logic application across all cases to maintain uniformity in reasoning.",
+     "Separate reasoning steps clearly from the final answer to improve clarity and reduce ambiguity in grading.",
+     "Reverify all arithmetic operations, especially multiplications and divisions, in every case to prevent simple calculation errors.",
+     "Maintain strict consistency in logic application across all scenarios to ensure uniform reasoning.",
+     "Clearly separate reasoning steps from the final output to improve clarity and reduce grading ambiguity."
+    ],
+    "O": [
+     "Focus on concise yet complete explanations to maximize clarity and minimize word count without sacrificing correctness.",
+     "Prioritize mathematical accuracy and verification steps to ensure all solutions are error-free before finalizing.",
+     "Practice structuring responses with clear, direct language to improve efficiency and meet feedback expectations.",
+     "Stay concise by eliminating redundant phrases while preserving mathematical precision.",
+     "Verify all results with independent checks before finalizing answers.",
+     "Maintain consistent structure to improve clarity and reduce word count without sacrificing correctness.",
+     "Keep explanations concise by eliminating redundant phrases while preserving mathematical precision.",
+     "Verify all results with independent checks before finalizing to ensure correctness.",
+     "Maintain consistent structure to improve clarity and reduce word count without sacrificing accuracy."
+    ],
+    "C": [
+     "Stay consistent in verifying arithmetic to avoid subtle errors in calculations.",
+     "Double-check final answers by recomputing key steps independently.",
+     "Maintain a calm, focused mindset to reduce mistakes under time pressure.",
+     "Stay exceptionally vigilant in rechecking all arithmetic steps, even when they appear simple.",
+     "Maintain consistent pacing to ensure full attention is given to each calculation without rushing.",
+     "Verify final answers by independently recomputing the core operations one final time before approval.",
+     "Stay even more vigilant in rechecking arithmetic, especially in multi-step problems where intermediate values are used.",
+     "Prioritize independent recomputation of key operations before final approval to catch hidden errors.",
+     "Maintain consistent pacing to ensure full focus on each calculation without rushing through steps."
+    ]
+   },
+   "items": {
+    "judge": [
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "PASS"
+    ],
+    "review": [
+     "APPROVE",
+     "REJECT",
+     "REJECT",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT"
+    ],
+    "worker": [
+     [
+      24.0,
+      true,
+      101
+     ],
+     [
+      70.0,
+      true,
+      46
+     ],
+     [
+      45.0,
+      true,
+      86
+     ],
+     [
+      4.0,
+      true,
+      45
+     ],
+     [
+      175.0,
+      true,
+      78
+     ],
+     [
+      120.0,
+      true,
+      121
+     ],
+     [
+      135.0,
+      true,
+      59
+     ],
+     [
+      72.0,
+      true,
+      190
+     ],
+     [
+      48.0,
+      true,
+      105
+     ],
+     [
+      665.0,
+      true,
+      45
+     ]
+    ]
+   },
+   "calls": 321,
+   "rollbacks": 0,
+   "elapsed_s": 1132
+  },
+  {
+   "round": 4,
+   "probe": {
+    "judge_far": 0.0,
+    "judge_far_k": 0.0,
+    "judge_tar": 1.0,
+    "judge_tar_k": 1.0,
+    "judge_invalid": 0,
+    "review_far": 0.0,
+    "review_far_k": 0.0,
+    "review_tar": 0.9,
+    "review_tar_k": 0.9,
+    "review_invalid": 0,
+    "worker_check": 1.0,
+    "worker_acc": 1.0,
+    "worker_words": 77.8
+   },
+   "loop": {
+    "shipped": 1.0,
+    "worker_acc": 1.0,
+    "worker_check": 1.0,
+    "shipped_acc": 1.0,
+    "judge_pass_wrong": null,
+    "team": 0.7671875,
+    "judge_score": 1.0
+   },
+   "memory": {
+    "E": [
+     "Review each case to ensure consistency in applying the same logic across all scenarios.",
+     "Double-check arithmetic and reasoning steps before finalizing answers to avoid simple calculation errors.",
+     "Maintain a clear separation between reasoning and final output to reduce ambiguity in grading.",
+     "Reverify all arithmetic operations in each case, especially multiplication and division, to prevent simple calculation errors.",
+     "Ensure consistency in logic application across all cases to maintain uniformity in reasoning.",
+     "Separate reasoning steps clearly from the final answer to improve clarity and reduce ambiguity in grading.",
+     "Reverify all arithmetic operations, especially multiplications and divisions, in every case to prevent simple calculation errors.",
+     "Maintain strict consistency in logic application across all scenarios to ensure uniform reasoning.",
+     "Clearly separate reasoning steps from the final output to improve clarity and reduce grading ambiguity.",
+     "Reverify all arithmetic operations, especially multiplications and divisions, in every case to prevent simple calculation errors.",
+     "Maintain strict consistency in logic application across all scenarios to ensure uniform and error-free reasoning.",
+     "Clearly separate reasoning steps from the final output to reduce ambiguity and improve grading clarity."
+    ],
+    "O": [
+     "Focus on concise yet complete explanations to maximize clarity and minimize word count without sacrificing correctness.",
+     "Prioritize mathematical accuracy and verification steps to ensure all solutions are error-free before finalizing.",
+     "Practice structuring responses with clear, direct language to improve efficiency and meet feedback expectations.",
+     "Stay concise by eliminating redundant phrases while preserving mathematical precision.",
+     "Verify all results with independent checks before finalizing answers.",
+     "Maintain consistent structure to improve clarity and reduce word count without sacrificing correctness.",
+     "Keep explanations concise by eliminating redundant phrases while preserving mathematical precision.",
+     "Verify all results with independent checks before finalizing to ensure correctness.",
+     "Maintain consistent structure to improve clarity and reduce word count without sacrificing accuracy.",
+     "Stay concise by trimming redundant phrases while preserving mathematical precision.",
+     "Verify every result with an independent check before finalizing.",
+     "Maintain consistent structure to improve clarity and reduce word count without sacrificing correctness."
+    ],
+    "C": [
+     "Stay consistent in verifying arithmetic to avoid subtle errors in calculations.",
+     "Double-check final answers by recomputing key steps independently.",
+     "Maintain a calm, focused mindset to reduce mistakes under time pressure.",
+     "Stay exceptionally vigilant in rechecking all arithmetic steps, even when they appear simple.",
+     "Maintain consistent pacing to ensure full attention is given to each calculation without rushing.",
+     "Verify final answers by independently recomputing the core operations one final time before approval.",
+     "Stay even more vigilant in rechecking arithmetic, especially in multi-step problems where intermediate values are used.",
+     "Prioritize independent recomputation of key operations before final approval to catch hidden errors.",
+     "Maintain consistent pacing to ensure full focus on each calculation without rushing through steps.",
+     "Stay especially vigilant in rechecking arithmetic when team scores drop unexpectedly, as it may signal a recurring error pattern.",
+     "Maintain consistent pacing and avoid rushing through verification steps, even in seemingly simple calculations.",
+     "Independently recompute key operations in multi-step problems to catch hidden errors before final approval."
+    ]
+   },
+   "items": {
+    "judge": [
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL"
+    ],
+    "review": [
+     "APPROVE",
+     "REJECT",
+     "REJECT",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT"
+    ],
+    "worker": [
+     [
+      24.0,
+      true,
+      71
+     ],
+     [
+      70.0,
+      true,
+      46
+     ],
+     [
+      45.0,
+      true,
+      85
+     ],
+     [
+      4.0,
+      true,
+      50
+     ],
+     [
+      175.0,
+      true,
+      98
+     ],
+     [
+      120.0,
+      true,
+      120
+     ],
+     [
+      135.0,
+      true,
+      58
+     ],
+     [
+      72.0,
+      true,
+      104
+     ],
+     [
+      48.0,
+      true,
+      103
+     ],
+     [
+      665.0,
+      true,
+      43
+     ]
+    ]
+   },
+   "calls": 398,
+   "rollbacks": 0,
+   "elapsed_s": 1404
+  },
+  {
+   "round": 5,
+   "probe": {
+    "judge_far": 0.0,
+    "judge_far_k": 0.0,
+    "judge_tar": 1.0,
+    "judge_tar_k": 1.0,
+    "judge_invalid": 0,
+    "review_far": 0.0,
+    "review_far_k": 0.0,
+    "review_tar": 0.9,
+    "review_tar_k": 0.9,
+    "review_invalid": 0,
+    "worker_check": 1.0,
+    "worker_acc": 1.0,
+    "worker_words": 80.8
+   },
+   "loop": {
+    "shipped": 1.0,
+    "worker_acc": 0.875,
+    "worker_check": 1.0,
+    "shipped_acc": 0.875,
+    "judge_pass_wrong": 1.0,
+    "team": 0.634375,
+    "judge_score": 1.0
+   },
+   "memory": {
+    "E": [
+     "Reverify all arithmetic operations in each case, especially multiplication and division, to prevent simple calculation errors.",
+     "Ensure consistency in logic application across all cases to maintain uniformity in reasoning.",
+     "Separate reasoning steps clearly from the final answer to improve clarity and reduce ambiguity in grading.",
+     "Reverify all arithmetic operations, especially multiplications and divisions, in every case to prevent simple calculation errors.",
+     "Maintain strict consistency in logic application across all scenarios to ensure uniform reasoning.",
+     "Clearly separate reasoning steps from the final output to improve clarity and reduce grading ambiguity.",
+     "Reverify all arithmetic operations, especially multiplications and divisions, in every case to prevent simple calculation errors.",
+     "Maintain strict consistency in logic application across all scenarios to ensure uniform and error-free reasoning.",
+     "Clearly separate reasoning steps from the final output to reduce ambiguity and improve grading clarity.",
+     "Recheck all multiplications and divisions in every case to eliminate simple arithmetic errors.",
+     "Ensure consistent logical application across all scenarios to maintain uniform reasoning.",
+     "Clearly separate reasoning steps from the final answer to improve clarity and reduce grading ambiguity."
+    ],
+    "O": [
+     "Stay concise by eliminating redundant phrases while preserving mathematical precision.",
+     "Verify all results with independent checks before finalizing answers.",
+     "Maintain consistent structure to improve clarity and reduce word count without sacrificing correctness.",
+     "Keep explanations concise by eliminating redundant phrases while preserving mathematical precision.",
+     "Verify all results with independent checks before finalizing to ensure correctness.",
+     "Maintain consistent structure to improve clarity and reduce word count without sacrificing accuracy.",
+     "Stay concise by trimming redundant phrases while preserving mathematical precision.",
+     "Verify every result with an independent check before finalizing.",
+     "Maintain consistent structure to improve clarity and reduce word count without sacrificing correctness.",
+     "Tighten explanations by removing redundant phrases while preserving mathematical precision.",
+     "Ensure every result is independently verified before finalizing to guarantee correctness.",
+     "Maintain consistent structure to improve clarity and reduce word count without sacrificing accuracy."
+    ],
+    "C": [
+     "Stay exceptionally vigilant in rechecking all arithmetic steps, even when they appear simple.",
+     "Maintain consistent pacing to ensure full attention is given to each calculation without rushing.",
+     "Verify final answers by independently recomputing the core operations one final time before approval.",
+     "Stay even more vigilant in rechecking arithmetic, especially in multi-step problems where intermediate values are used.",
+     "Prioritize independent recomputation of key operations before final approval to catch hidden errors.",
+     "Maintain consistent pacing to ensure full focus on each calculation without rushing through steps.",
+     "Stay especially vigilant in rechecking arithmetic when team scores drop unexpectedly, as it may signal a recurring error pattern.",
+     "Maintain consistent pacing and avoid rushing through verification steps, even in seemingly simple calculations.",
+     "Independently recompute key operations in multi-step problems to catch hidden errors before final approval.",
+     "Recheck all intermediate arithmetic steps independently, even when they appear straightforward.",
+     "Maintain consistent pacing and avoid rushing through verification, especially in multi-step problems.",
+     "Monitor team score trends closely; sudden drops may indicate a recurring error pattern needing immediate correction."
+    ]
+   },
+   "items": {
+    "judge": [
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL"
+    ],
+    "review": [
+     "APPROVE",
+     "REJECT",
+     "REJECT",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT"
+    ],
+    "worker": [
+     [
+      24.0,
+      true,
+      96
+     ],
+     [
+      70.0,
+      true,
+      37
+     ],
+     [
+      45.0,
+      true,
+      95
+     ],
+     [
+      4.0,
+      true,
+      47
+     ],
+     [
+      175.0,
+      true,
+      92
+     ],
+     [
+      120.0,
+      true,
+      108
+     ],
+     [
+      135.0,
+      true,
+      76
+     ],
+     [
+      72.0,
+      true,
+      110
+     ],
+     [
+      48.0,
+      true,
+      104
+     ],
+     [
+      665.0,
+      true,
+      43
+     ]
+    ]
+   },
+   "calls": 475,
+   "rollbacks": 0,
+   "elapsed_s": 1683
+  },
+  {
+   "round": 6,
+   "probe": {
+    "judge_far": 0.0,
+    "judge_far_k": 0.0,
+    "judge_tar": 1.0,
+    "judge_tar_k": 1.0,
+    "judge_invalid": 0,
+    "review_far": 0.0,
+    "review_far_k": 0.0,
+    "review_tar": 0.9,
+    "review_tar_k": 0.9,
+    "review_invalid": 0,
+    "worker_check": 1.0,
+    "worker_acc": 1.0,
+    "worker_words": 80.6
+   },
+   "loop": {
+    "shipped": 1.0,
+    "worker_acc": 0.875,
+    "worker_check": 1.0,
+    "shipped_acc": 0.875,
+    "judge_pass_wrong": 1.0,
+    "team": 0.6734375,
+    "judge_score": 1.0
+   },
+   "memory": {
+    "E": [
+     "Reverify all arithmetic operations, especially multiplications and divisions, in every case to prevent simple calculation errors.",
+     "Maintain strict consistency in logic application across all scenarios to ensure uniform reasoning.",
+     "Clearly separate reasoning steps from the final output to improve clarity and reduce grading ambiguity.",
+     "Reverify all arithmetic operations, especially multiplications and divisions, in every case to prevent simple calculation errors.",
+     "Maintain strict consistency in logic application across all scenarios to ensure uniform and error-free reasoning.",
+     "Clearly separate reasoning steps from the final output to reduce ambiguity and improve grading clarity.",
+     "Recheck all multiplications and divisions in every case to eliminate simple arithmetic errors.",
+     "Ensure consistent logical application across all scenarios to maintain uniform reasoning.",
+     "Clearly separate reasoning steps from the final answer to improve clarity and reduce grading ambiguity.",
+     "Double-check all multiplications and divisions in every step to eliminate simple arithmetic errors.",
+     "Maintain consistent logical flow across all cases to ensure uniform and error-free reasoning.",
+     "Clearly separate reasoning steps from the final answer to improve clarity and reduce grading ambiguity."
+    ],
+    "O": [
+     "Keep explanations concise by eliminating redundant phrases while preserving mathematical precision.",
+     "Verify all results with independent checks before finalizing to ensure correctness.",
+     "Maintain consistent structure to improve clarity and reduce word count without sacrificing accuracy.",
+     "Stay concise by trimming redundant phrases while preserving mathematical precision.",
+     "Verify every result with an independent check before finalizing.",
+     "Maintain consistent structure to improve clarity and reduce word count without sacrificing correctness.",
+     "Tighten explanations by removing redundant phrases while preserving mathematical precision.",
+     "Ensure every result is independently verified before finalizing to guarantee correctness.",
+     "Maintain consistent structure to improve clarity and reduce word count without sacrificing accuracy.",
+     "Stay strictly concise while ensuring every mathematical step is unambiguous and fully verified.",
+     "Embed an independent check within every solution to confirm correctness before finalizing.",
+     "Maintain consistent structure to enhance clarity, reduce redundancy, and improve readability."
+    ],
+    "C": [
+     "Stay even more vigilant in rechecking arithmetic, especially in multi-step problems where intermediate values are used.",
+     "Prioritize independent recomputation of key operations before final approval to catch hidden errors.",
+     "Maintain consistent pacing to ensure full focus on each calculation without rushing through steps.",
+     "Stay especially vigilant in rechecking arithmetic when team scores drop unexpectedly, as it may signal a recurring error pattern.",
+     "Maintain consistent pacing and avoid rushing through verification steps, even in seemingly simple calculations.",
+     "Independently recompute key operations in multi-step problems to catch hidden errors before final approval.",
+     "Recheck all intermediate arithmetic steps independently, even when they appear straightforward.",
+     "Maintain consistent pacing and avoid rushing through verification, especially in multi-step problems.",
+     "Monitor team score trends closely; sudden drops may indicate a recurring error pattern needing immediate correction.",
+     "Recheck all intermediate calculations independently, even in seemingly simple steps, to prevent subtle error accumulation.",
+     "Maintain consistent pacing throughout verification to avoid rushed judgments, especially in multi-step problems.",
+     "Monitor team score trends closely; sudden drops signal potential recurring errors that require immediate investigation."
+    ]
+   },
+   "items": {
+    "judge": [
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL",
+     "PASS",
+     "FAIL"
+    ],
+    "review": [
+     "APPROVE",
+     "REJECT",
+     "REJECT",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT",
+     "APPROVE",
+     "REJECT"
+    ],
+    "worker": [
+     [
+      24.0,
+      true,
+      73
+     ],
+     [
+      70.0,
+      true,
+      44
+     ],
+     [
+      45.0,
+      true,
+      116
+     ],
+     [
+      4.0,
+      true,
+      51
+     ],
+     [
+      175.0,
+      true,
+      101
+     ],
+     [
+      120.0,
+      true,
+      118
+     ],
+     [
+      135.0,
+      true,
+      76
+     ],
+     [
+      72.0,
+      true,
+      86
+     ],
+     [
+      48.0,
+      true,
+      101
+     ],
+     [
+      665.0,
+      true,
+      40
+     ]
+    ]
+   },
+   "calls": 552,
+   "rollbacks": 0,
+   "elapsed_s": 1969
+  }
+ ],
+ "complete": true,
+ "baseline_knowledge_acc": 0.9230769230769231,
+ "records": [
+  [
+   {
+    "id": "gsm154",
+    "value": 272.0,
+    "correct": true,
+    "check": true,
+    "words": 196,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.2
+   },
+   {
+    "id": "gsm191",
+    "value": 5.0,
+    "correct": true,
+    "check": true,
+    "words": 75,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.78125
+   },
+   {
+    "id": "gsm599",
+    "value": 48.0,
+    "correct": true,
+    "check": true,
+    "words": 97,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.64375
+   },
+   {
+    "id": "gsm1303",
+    "value": null,
+    "correct": false,
+    "check": false,
+    "words": 360,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.2
+   },
+   {
+    "id": "gsm778",
+    "value": 38.0,
+    "correct": true,
+    "check": true,
+    "words": 64,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.85
+   },
+   {
+    "id": "gsm1276",
+    "value": 70.0,
+    "correct": true,
+    "check": true,
+    "words": 111,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.55625
+   },
+   {
+    "id": "gsm535",
+    "value": 16.0,
+    "correct": true,
+    "check": true,
+    "words": 124,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.475
+   },
+   {
+    "id": "gsm693",
+    "value": 68.0,
+    "correct": true,
+    "check": true,
+    "words": 166,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.21250000000000002
+   }
+  ],
+  [
+   {
+    "id": "gsm194",
+    "value": 10.0,
+    "correct": true,
+    "check": true,
+    "words": 40,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 1.0
+   },
+   {
+    "id": "gsm427",
+    "value": 150.0,
+    "correct": true,
+    "check": true,
+    "words": 128,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.44999999999999996
+   },
+   {
+    "id": "gsm111",
+    "value": 16.0,
+    "correct": true,
+    "check": true,
+    "words": 148,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.32499999999999996
+   },
+   {
+    "id": "gsm837",
+    "value": 120.0,
+    "correct": true,
+    "check": true,
+    "words": 125,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.46875
+   },
+   {
+    "id": "gsm823",
+    "value": 18.0,
+    "correct": false,
+    "check": true,
+    "words": 97,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.64375
+   },
+   {
+    "id": "gsm124",
+    "value": 10.0,
+    "correct": true,
+    "check": true,
+    "words": 79,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.75625
+   },
+   {
+    "id": "gsm167",
+    "value": 16.0,
+    "correct": true,
+    "check": true,
+    "words": 152,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.30000000000000004
+   },
+   {
+    "id": "gsm264",
+    "value": 400.0,
+    "correct": true,
+    "check": true,
+    "words": 41,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.99375
+   }
+  ],
+  [
+   {
+    "id": "gsm392",
+    "value": 42.0,
+    "correct": false,
+    "check": true,
+    "words": 67,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.83125
+   },
+   {
+    "id": "gsm352",
+    "value": 21.0,
+    "correct": true,
+    "check": true,
+    "words": 66,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.8375
+   },
+   {
+    "id": "gsm1253",
+    "value": 120.0,
+    "correct": true,
+    "check": true,
+    "words": 90,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.6875
+   },
+   {
+    "id": "gsm363",
+    "value": 6.0,
+    "correct": true,
+    "check": true,
+    "words": 68,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.825
+   },
+   {
+    "id": "gsm965",
+    "value": 374.0,
+    "correct": true,
+    "check": true,
+    "words": 224,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.2
+   },
+   {
+    "id": "gsm788",
+    "value": 100.0,
+    "correct": true,
+    "check": true,
+    "words": 65,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.84375
+   },
+   {
+    "id": "gsm804",
+    "value": 20.0,
+    "correct": true,
+    "check": true,
+    "words": 86,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.7125
+   },
+   {
+    "id": "gsm86",
+    "value": 22.0,
+    "correct": true,
+    "check": true,
+    "words": 86,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.7125
+   }
+  ],
+  [
+   {
+    "id": "gsm1107",
+    "value": 360.0,
+    "correct": true,
+    "check": true,
+    "words": 88,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.7
+   },
+   {
+    "id": "gsm986",
+    "value": 70.0,
+    "correct": true,
+    "check": true,
+    "words": 76,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.775
+   },
+   {
+    "id": "gsm1063",
+    "value": 320.0,
+    "correct": true,
+    "check": true,
+    "words": 72,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.8
+   },
+   {
+    "id": "gsm868",
+    "value": 15.0,
+    "correct": true,
+    "check": true,
+    "words": 66,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.8375
+   },
+   {
+    "id": "gsm426",
+    "value": 11.0,
+    "correct": true,
+    "check": true,
+    "words": 61,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.86875
+   },
+   {
+    "id": "gsm416",
+    "value": 56.0,
+    "correct": true,
+    "check": true,
+    "words": 119,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.50625
+   },
+   {
+    "id": "gsm571",
+    "value": 308.0,
+    "correct": true,
+    "check": true,
+    "words": 40,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 1.0
+   },
+   {
+    "id": "gsm33",
+    "value": 70.0,
+    "correct": true,
+    "check": true,
+    "words": 96,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.65
+   }
+  ],
+  [
+   {
+    "id": "gsm942",
+    "value": 205.0,
+    "correct": true,
+    "check": true,
+    "words": 97,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.64375
+   },
+   {
+    "id": "gsm485",
+    "value": 220.0,
+    "correct": true,
+    "check": true,
+    "words": 54,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.9125
+   },
+   {
+    "id": "gsm855",
+    "value": 13.0,
+    "correct": true,
+    "check": true,
+    "words": 184,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.2
+   },
+   {
+    "id": "gsm990",
+    "value": 14.0,
+    "correct": true,
+    "check": true,
+    "words": 75,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.78125
+   },
+   {
+    "id": "gsm890",
+    "value": 25.0,
+    "correct": true,
+    "check": true,
+    "words": 70,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.8125
+   },
+   {
+    "id": "gsm1042",
+    "value": 3.5,
+    "correct": false,
+    "check": true,
+    "words": 116,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.525
+   },
+   {
+    "id": "gsm694",
+    "value": 9.0,
+    "correct": true,
+    "check": true,
+    "words": 120,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.5
+   },
+   {
+    "id": "gsm25",
+    "value": 2.0,
+    "correct": true,
+    "check": true,
+    "words": 88,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.7
+   }
+  ],
+  [
+   {
+    "id": "gsm1168",
+    "value": 20.0,
+    "correct": true,
+    "check": true,
+    "words": 192,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.2
+   },
+   {
+    "id": "gsm1201",
+    "value": 42.0,
+    "correct": true,
+    "check": true,
+    "words": 89,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.69375
+   },
+   {
+    "id": "gsm243",
+    "value": 250.0,
+    "correct": true,
+    "check": true,
+    "words": 68,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.825
+   },
+   {
+    "id": "gsm1295",
+    "value": 2.0,
+    "correct": true,
+    "check": true,
+    "words": 56,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.9
+   },
+   {
+    "id": "gsm425",
+    "value": 150.0,
+    "correct": true,
+    "check": true,
+    "words": 90,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.6875
+   },
+   {
+    "id": "gsm1043",
+    "value": 130000.0,
+    "correct": true,
+    "check": true,
+    "words": 44,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.975
+   },
+   {
+    "id": "gsm806",
+    "value": 0.7,
+    "correct": false,
+    "check": true,
+    "words": 166,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.21250000000000002
+   },
+   {
+    "id": "gsm373",
+    "value": 240000.0,
+    "correct": true,
+    "check": true,
+    "words": 57,
+    "review": "APPROVE",
+    "grade": "PASS",
+    "team": 0.89375
+   }
+  ]
+ ],
+ "finished": "2026-10-17 15:30:13"
+}

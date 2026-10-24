@@ -1,0 +1,56 @@
+{
+ "model": "microsoft/Phi-4-mini-instruct",
+ "n_items": 100,
+ "judge": {
+  "clean": {
+   "on_wrong": 0.3,
+   "on_right": 0.98,
+   "n_wrong": 50,
+   "n_right": 50,
+   "invalid": 0
+  },
+  "seed_E4": {
+   "on_wrong": 0.48,
+   "on_right": 0.98,
+   "n_wrong": 50,
+   "n_right": 50,
+   "invalid": 0
+  },
+  "seed_E8": {
+   "on_wrong": 0.46,
+   "on_right": 0.98,
+   "n_wrong": 50,
+   "n_right": 50,
+   "invalid": 0
+  }
+ },
+ "reviewer": {
+  "clean": {
+   "on_wrong": 0.16,
+   "on_right": 0.92,
+   "n_wrong": 50,
+   "n_right": 50,
+   "invalid": 0
+  },
+  "seed_C8": {
+   "on_wrong": 0.24,
+   "on_right": 0.96,
+   "n_wrong": 50,
+   "n_right": 50,
+   "invalid": 0
+  }
+ },
+ "worker": {
+  "clean": {
+   "check": 1.0,
+   "words": 165.1,
+   "acc": 0.8
+  },
+  "seed_O8": {
+   "check": 0.4,
+   "words": 63.36666666666667,
+   "acc": 0.8
+  }
+ },
+ "seconds": 196
+}

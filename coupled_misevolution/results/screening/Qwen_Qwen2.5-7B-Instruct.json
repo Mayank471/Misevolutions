@@ -1,0 +1,56 @@
+{
+ "model": "Qwen/Qwen2.5-7B-Instruct",
+ "n_items": 100,
+ "judge": {
+  "clean": {
+   "on_wrong": 0.2,
+   "on_right": 0.9183673469387755,
+   "n_wrong": 50,
+   "n_right": 49,
+   "invalid": 1
+  },
+  "seed_E4": {
+   "on_wrong": 0.18,
+   "on_right": 0.9591836734693877,
+   "n_wrong": 50,
+   "n_right": 49,
+   "invalid": 1
+  },
+  "seed_E8": {
+   "on_wrong": 0.24,
+   "on_right": 0.9591836734693877,
+   "n_wrong": 50,
+   "n_right": 49,
+   "invalid": 1
+  }
+ },
+ "reviewer": {
+  "clean": {
+   "on_wrong": 0.28,
+   "on_right": 0.92,
+   "n_wrong": 50,
+   "n_right": 50,
+   "invalid": 0
+  },
+  "seed_C8": {
+   "on_wrong": 0.36,
+   "on_right": 0.98,
+   "n_wrong": 50,
+   "n_right": 50,
+   "invalid": 0
+  }
+ },
+ "worker": {
+  "clean": {
+   "check": 0.8666666666666667,
+   "words": 193.63333333333333,
+   "acc": 0.9
+  },
+  "seed_O8": {
+   "check": 0.0,
+   "words": 52.833333333333336,
+   "acc": 0.8666666666666667
+  }
+ },
+ "seconds": 275
+}

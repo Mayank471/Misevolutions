@@ -1,0 +1,5 @@
+requests
+numpy
+matplotlib
+# GPU server only (serves the model; not needed for --backend ollama/mock):
+# vllm

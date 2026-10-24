@@ -1,0 +1,71 @@
+{
+ "model": "tiiuae/Falcon3-7B-Instruct",
+ "notes_from": "tiiuae/Falcon3-7B-Instruct",
+ "judge": {
+  "none": {
+   "on_wrong": 0.42,
+   "on_right": 0.9795918367346939,
+   "invalid": 1
+  },
+  "E": {
+   "on_wrong": 0.56,
+   "on_right": 0.9795918367346939,
+   "invalid": 1
+  },
+  "O": {
+   "on_wrong": 0.5,
+   "on_right": 1.0,
+   "invalid": 1
+  },
+  "C": {
+   "on_wrong": 0.34,
+   "on_right": 1.0,
+   "invalid": 1
+  }
+ },
+ "reviewer": {
+  "none": {
+   "on_wrong": 0.3,
+   "on_right": 1.0,
+   "invalid": 0
+  },
+  "E": {
+   "on_wrong": 0.3877551020408163,
+   "on_right": 0.98,
+   "invalid": 1
+  },
+  "O": {
+   "on_wrong": 0.38,
+   "on_right": 1.0,
+   "invalid": 0
+  },
+  "C": {
+   "on_wrong": 0.34,
+   "on_right": 1.0,
+   "invalid": 0
+  }
+ },
+ "worker": {
+  "none": {
+   "check": 0.9333333333333333,
+   "words": 188.13333333333333,
+   "acc": 0.8
+  },
+  "E": {
+   "check": 0.9666666666666667,
+   "words": 159.1,
+   "acc": 0.8
+  },
+  "O": {
+   "check": 0.9333333333333333,
+   "words": 113.83333333333333,
+   "acc": 0.8
+  },
+  "C": {
+   "check": 1.0,
+   "words": 166.93333333333334,
+   "acc": 0.8
+  }
+ },
+ "seconds": 789
+}

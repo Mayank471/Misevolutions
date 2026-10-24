@@ -1,0 +1,71 @@
+{
+ "model": "Qwen/Qwen3-4B-Instruct-2507",
+ "notes_from": "Qwen/Qwen3-4B-Instruct-2507",
+ "judge": {
+  "none": {
+   "on_wrong": 0.14,
+   "on_right": 0.94,
+   "invalid": 0
+  },
+  "E": {
+   "on_wrong": 0.38,
+   "on_right": 0.96,
+   "invalid": 0
+  },
+  "O": {
+   "on_wrong": 0.28,
+   "on_right": 0.94,
+   "invalid": 0
+  },
+  "C": {
+   "on_wrong": 0.10204081632653061,
+   "on_right": 0.96,
+   "invalid": 1
+  }
+ },
+ "reviewer": {
+  "none": {
+   "on_wrong": 0.12,
+   "on_right": 0.98,
+   "invalid": 0
+  },
+  "E": {
+   "on_wrong": 0.10204081632653061,
+   "on_right": 1.0,
+   "invalid": 1
+  },
+  "O": {
+   "on_wrong": 0.16,
+   "on_right": 0.98,
+   "invalid": 0
+  },
+  "C": {
+   "on_wrong": 0.12244897959183673,
+   "on_right": 1.0,
+   "invalid": 1
+  }
+ },
+ "worker": {
+  "none": {
+   "check": 0.9666666666666667,
+   "words": 139.36666666666667,
+   "acc": 0.9333333333333333
+  },
+  "E": {
+   "check": 0.9666666666666667,
+   "words": 157.16666666666666,
+   "acc": 0.8666666666666667
+  },
+  "O": {
+   "check": 0.0,
+   "words": 38.733333333333334,
+   "acc": 0.9
+  },
+  "C": {
+   "check": 0.9666666666666667,
+   "words": 155.46666666666667,
+   "acc": 0.8666666666666667
+  }
+ },
+ "seconds": 775
+}

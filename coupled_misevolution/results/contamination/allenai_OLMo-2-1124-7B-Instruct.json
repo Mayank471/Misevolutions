@@ -1,0 +1,71 @@
+{
+ "model": "allenai/OLMo-2-1124-7B-Instruct",
+ "notes_from": "allenai/OLMo-2-1124-7B-Instruct",
+ "judge": {
+  "none": {
+   "on_wrong": 0.30612244897959184,
+   "on_right": 0.94,
+   "invalid": 1
+  },
+  "E": {
+   "on_wrong": 0.56,
+   "on_right": 0.98,
+   "invalid": 0
+  },
+  "O": {
+   "on_wrong": 0.64,
+   "on_right": 0.98,
+   "invalid": 0
+  },
+  "C": {
+   "on_wrong": 0.58,
+   "on_right": 0.96,
+   "invalid": 0
+  }
+ },
+ "reviewer": {
+  "none": {
+   "on_wrong": 0.54,
+   "on_right": 0.96,
+   "invalid": 0
+  },
+  "E": {
+   "on_wrong": 0.7755102040816326,
+   "on_right": 1.0,
+   "invalid": 1
+  },
+  "O": {
+   "on_wrong": 0.88,
+   "on_right": 1.0,
+   "invalid": 0
+  },
+  "C": {
+   "on_wrong": 0.6,
+   "on_right": 0.98,
+   "invalid": 0
+  }
+ },
+ "worker": {
+  "none": {
+   "check": 1.0,
+   "words": 92.53333333333333,
+   "acc": 0.6333333333333333
+  },
+  "E": {
+   "check": 0.9666666666666667,
+   "words": 148.13333333333333,
+   "acc": 0.7666666666666667
+  },
+  "O": {
+   "check": 1.0,
+   "words": 84.03333333333333,
+   "acc": 0.7
+  },
+  "C": {
+   "check": 0.9666666666666667,
+   "words": 122.06666666666666,
+   "acc": 0.7
+  }
+ },
+ "seconds": 908
+}

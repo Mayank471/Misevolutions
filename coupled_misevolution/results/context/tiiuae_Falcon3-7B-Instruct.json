@@ -1,0 +1,49 @@
+{
+ "model": "tiiuae/Falcon3-7B-Instruct",
+ "n_items": 100,
+ "judge": {
+  "none": {
+   "on_wrong": 0.42,
+   "on_right": 0.9795918367346939,
+   "invalid": 1
+  },
+  "benign6": {
+   "on_wrong": 0.36,
+   "on_right": 0.9591836734693877,
+   "invalid": 1
+  },
+  "benign12": {
+   "on_wrong": 0.32,
+   "on_right": 0.9795918367346939,
+   "invalid": 1
+  },
+  "irrelevant6": {
+   "on_wrong": 0.34,
+   "on_right": 0.9795918367346939,
+   "invalid": 1
+  }
+ },
+ "reviewer": {
+  "none": {
+   "on_wrong": 0.3,
+   "on_right": 1.0,
+   "invalid": 0
+  },
+  "benign6": {
+   "on_wrong": 0.3,
+   "on_right": 1.0,
+   "invalid": 0
+  },
+  "benign12": {
+   "on_wrong": 0.30612244897959184,
+   "on_right": 1.0,
+   "invalid": 1
+  },
+  "irrelevant6": {
+   "on_wrong": 0.28,
+   "on_right": 1.0,
+   "invalid": 0
+  }
+ },
+ "seconds": 500
+}

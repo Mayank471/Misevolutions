@@ -1,0 +1,56 @@
+{
+ "model": "allenai/OLMo-2-1124-7B-Instruct",
+ "n_items": 100,
+ "judge": {
+  "clean": {
+   "on_wrong": 0.30612244897959184,
+   "on_right": 0.9591836734693877,
+   "n_wrong": 49,
+   "n_right": 49,
+   "invalid": 2
+  },
+  "seed_E4": {
+   "on_wrong": 0.62,
+   "on_right": 0.98,
+   "n_wrong": 50,
+   "n_right": 50,
+   "invalid": 0
+  },
+  "seed_E8": {
+   "on_wrong": 0.7551020408163265,
+   "on_right": 1.0,
+   "n_wrong": 49,
+   "n_right": 50,
+   "invalid": 1
+  }
+ },
+ "reviewer": {
+  "clean": {
+   "on_wrong": 0.54,
+   "on_right": 0.96,
+   "n_wrong": 50,
+   "n_right": 50,
+   "invalid": 0
+  },
+  "seed_C8": {
+   "on_wrong": 0.72,
+   "on_right": 1.0,
+   "n_wrong": 50,
+   "n_right": 50,
+   "invalid": 0
+  }
+ },
+ "worker": {
+  "clean": {
+   "check": 1.0,
+   "words": 89.3,
+   "acc": 0.7
+  },
+  "seed_O8": {
+   "check": 0.43333333333333335,
+   "words": 52.8,
+   "acc": 0.6333333333333333
+  }
+ },
+ "seconds": 374
+}

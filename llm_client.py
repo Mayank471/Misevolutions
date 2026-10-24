@@ -12,20 +12,25 @@ def sanitize(model: str) -> str:
     return re.sub(r'[:\/*?"<>|]+', "_", model)
 
 def chat(prompt, model, api_key=None, temperature=0.1, max_tokens=8192,
-         max_retries=8, system=None):
-    """Single-turn chat completion with retry/backoff. Returns text (or 'Error: ...')."""
+         max_retries=8, system=None, base_url=None, extra=None):
+    """Single-turn chat completion with retry/backoff. Returns text (or 'Error: ...').
+    base_url overrides the env endpoint (e.g. a local Ollama server); extra is merged
+    into the request body (e.g. {"reasoning_effort": "none"} to disable thinking)."""
     key = api_key or API_KEY
+    url = (base_url or BASE_URL).rstrip("/")
     msgs = []
     if system:
         msgs.append({"role": "system", "content": system})
     msgs.append({"role": "user", "content": prompt})
     payload = {"model": model, "messages": msgs, "temperature": temperature,
                "max_tokens": max_tokens, "stream": False}
+    if extra:
+        payload.update(extra)
     headers = {"Authorization": f"Bearer {key}", "Content-Type": "application/json"}
     delay = 5.0
     for attempt in range(max_retries):
         try:
-            r = requests.post(f"{BASE_URL}/chat/completions", headers=headers,
+            r = requests.post(f"{url}/chat/completions", headers=headers,
                               json=payload, timeout=600, verify=False)
         except Exception as e:
             if attempt == max_retries - 1:

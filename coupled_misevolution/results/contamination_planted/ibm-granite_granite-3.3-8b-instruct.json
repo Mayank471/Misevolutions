@@ -1,0 +1,71 @@
+{
+ "model": "ibm-granite/granite-3.3-8b-instruct",
+ "notes_from": "ibm-granite/granite-3.3-8b-instruct",
+ "judge": {
+  "none": {
+   "on_wrong": 0.10204081632653061,
+   "on_right": 1.0,
+   "invalid": 2
+  },
+  "E": {
+   "on_wrong": 0.3,
+   "on_right": 0.9791666666666666,
+   "invalid": 2
+  },
+  "O": {
+   "on_wrong": 0.1,
+   "on_right": 0.98,
+   "invalid": 0
+  },
+  "C": {
+   "on_wrong": 0.14,
+   "on_right": 0.9795918367346939,
+   "invalid": 1
+  }
+ },
+ "reviewer": {
+  "none": {
+   "on_wrong": 0.3,
+   "on_right": 0.94,
+   "invalid": 0
+  },
+  "E": {
+   "on_wrong": 0.5531914893617021,
+   "on_right": 0.9795918367346939,
+   "invalid": 4
+  },
+  "O": {
+   "on_wrong": 0.32,
+   "on_right": 1.0,
+   "invalid": 0
+  },
+  "C": {
+   "on_wrong": 0.673469387755102,
+   "on_right": 1.0,
+   "invalid": 1
+  }
+ },
+ "worker": {
+  "none": {
+   "check": 0.9666666666666667,
+   "words": 184.03333333333333,
+   "acc": 0.6333333333333333
+  },
+  "E": {
+   "check": 0.8333333333333334,
+   "words": 184.26666666666668,
+   "acc": 0.4666666666666667
+  },
+  "O": {
+   "check": 0.03333333333333333,
+   "words": 51.7,
+   "acc": 0.6
+  },
+  "C": {
+   "check": 0.9666666666666667,
+   "words": 169.23333333333332,
+   "acc": 0.7
+  }
+ },
+ "seconds": 1371
+}
